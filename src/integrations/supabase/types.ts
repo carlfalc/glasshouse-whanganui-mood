@@ -44,6 +44,30 @@ export type Database = {
         }
         Relationships: []
       }
+      coffee_admin_users: {
+        Row: {
+          created_at: string
+          display_name: string | null
+          email: string
+          id: string
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          display_name?: string | null
+          email: string
+          id?: string
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          display_name?: string | null
+          email?: string
+          id?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
       coffee_orders: {
         Row: {
           charged_to_room: boolean | null
