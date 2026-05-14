@@ -1,1 +1,4 @@
 project_id = "yasgpxpncftecobtnvxm"
+
+[functions.admin-pin-login]
+verify_jwt = false
