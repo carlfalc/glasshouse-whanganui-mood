@@ -14,7 +14,117 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      coffee_orders: {
+        Row: {
+          charged_to_room: boolean | null
+          completed_at: string | null
+          created_at: string
+          fulfilment_type: string
+          guest_name: string
+          id: string
+          items: Json
+          notes: string | null
+          notify_when_ready: boolean | null
+          order_total: number
+          phone: string | null
+          room_number: string
+          scheduled_for: string | null
+          status: string
+        }
+        Insert: {
+          charged_to_room?: boolean | null
+          completed_at?: string | null
+          created_at?: string
+          fulfilment_type: string
+          guest_name: string
+          id?: string
+          items: Json
+          notes?: string | null
+          notify_when_ready?: boolean | null
+          order_total?: number
+          phone?: string | null
+          room_number: string
+          scheduled_for?: string | null
+          status?: string
+        }
+        Update: {
+          charged_to_room?: boolean | null
+          completed_at?: string | null
+          created_at?: string
+          fulfilment_type?: string
+          guest_name?: string
+          id?: string
+          items?: Json
+          notes?: string | null
+          notify_when_ready?: boolean | null
+          order_total?: number
+          phone?: string | null
+          room_number?: string
+          scheduled_for?: string | null
+          status?: string
+        }
+        Relationships: []
+      }
+      menu_items: {
+        Row: {
+          base_price: number
+          category: string
+          created_at: string
+          id: string
+          is_active: boolean | null
+          name: string
+          sort_order: number | null
+        }
+        Insert: {
+          base_price: number
+          category: string
+          created_at?: string
+          id?: string
+          is_active?: boolean | null
+          name: string
+          sort_order?: number | null
+        }
+        Update: {
+          base_price?: number
+          category?: string
+          created_at?: string
+          id?: string
+          is_active?: boolean | null
+          name?: string
+          sort_order?: number | null
+        }
+        Relationships: []
+      }
+      menu_options: {
+        Row: {
+          created_at: string
+          id: string
+          is_active: boolean | null
+          name: string
+          option_group: string
+          price_modifier: number
+          sort_order: number | null
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          is_active?: boolean | null
+          name: string
+          option_group: string
+          price_modifier?: number
+          sort_order?: number | null
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          is_active?: boolean | null
+          name?: string
+          option_group?: string
+          price_modifier?: number
+          sort_order?: number | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
