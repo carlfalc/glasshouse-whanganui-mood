@@ -13,6 +13,10 @@ import OurPeople from "./pages/OurPeople.tsx";
 import Vouchers from "./pages/Vouchers.tsx";
 import Contact from "./pages/Contact.tsx";
 import NotFound from "./pages/NotFound.tsx";
+import AdminLogin from "./pages/coffee/AdminLogin.tsx";
+import AdminHome from "./pages/coffee/AdminHome.tsx";
+import AdminOrders from "./pages/coffee/AdminOrders.tsx";
+import AdminSettings from "./pages/coffee/AdminSettings.tsx";
 
 const queryClient = new QueryClient();
 
@@ -32,6 +36,10 @@ const App = () => (
           <Route path="/our-people" element={<OurPeople />} />
           <Route path="/vouchers" element={<Vouchers />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/coffee/admin/login" element={<AdminLogin />} />
+          <Route path="/coffee/admin" element={<AdminHome />} />
+          <Route path="/coffee/admin/orders" element={<AdminOrders />} />
+          <Route path="/coffee/admin/settings" element={<AdminSettings />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
