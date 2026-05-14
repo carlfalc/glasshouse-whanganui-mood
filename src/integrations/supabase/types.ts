@@ -14,6 +14,24 @@ export type Database = {
   }
   public: {
     Tables: {
+      admin_pin_settings: {
+        Row: {
+          id: string
+          pin: string
+          updated_at: string
+        }
+        Insert: {
+          id?: string
+          pin: string
+          updated_at?: string
+        }
+        Update: {
+          id?: string
+          pin?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
       cafe_settings: {
         Row: {
           close_time: string | null
