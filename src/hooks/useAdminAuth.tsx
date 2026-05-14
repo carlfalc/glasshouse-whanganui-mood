@@ -72,7 +72,9 @@ export function useAdminAuth() {
         setAdminLoading(false);
       });
 
-    return () => subscription.unsubscribe();
+    return () => {
+      cancelled = true;
+    };
   }, [email, loading]);
 
   const isAuthorized = !!adminUser;
