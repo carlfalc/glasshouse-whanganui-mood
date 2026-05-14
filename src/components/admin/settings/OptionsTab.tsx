@@ -53,12 +53,12 @@ export function OptionsTab() {
     toast.success("Deleted");
   };
 
-  const add = async (group: string, name: string, mod: number) => {
+  const add = async (group: string, name: string, mod: number): Promise<void> => {
     const { data, error } = await supabase
       .from("menu_options")
       .insert({ option_group: group, name, price_modifier: mod, is_active: true, sort_order: 99 })
       .select().single();
-    if (error) return toast.error(error.message);
+    if (error) { toast.error(error.message); return; }
     setOptions((p) => [...p, data as Option]);
     toast.success("Added");
   };
