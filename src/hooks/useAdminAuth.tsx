@@ -56,6 +56,19 @@ export function useAdminAuth() {
     setAdminLoading(true);
     setAdminError(null);
 
+    // Shared staff PIN account is always authorised
+    if (email === "staff@glasshouse-coffee.local") {
+      setAdminUser({
+        id: "shared",
+        email,
+        display_name: "Staff",
+        created_at: "",
+        updated_at: "",
+      });
+      setAdminLoading(false);
+      return;
+    }
+
     (supabase as any)
       .from("coffee_admin_users")
       .select("id,email,display_name,created_at,updated_at")
