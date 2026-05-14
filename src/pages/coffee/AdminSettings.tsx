@@ -8,6 +8,7 @@ import { MenuItemsTab } from "@/components/admin/settings/MenuItemsTab";
 import { OptionsTab } from "@/components/admin/settings/OptionsTab";
 import { CafeHoursTab } from "@/components/admin/settings/CafeHoursTab";
 import { AdminUsersTab } from "@/components/admin/settings/AdminUsersTab";
+import { ChangePinTab } from "@/components/admin/settings/ChangePinTab";
 
 export default function AdminSettings() {
   const [tab, setTab] = useState("items");
@@ -24,11 +25,13 @@ export default function AdminSettings() {
             <TabsTrigger value="options">Options &amp; Modifiers</TabsTrigger>
             <TabsTrigger value="hours">Cafe Hours</TabsTrigger>
             <TabsTrigger value="users">Admin Users</TabsTrigger>
+            <TabsTrigger value="pin">Staff PIN</TabsTrigger>
           </TabsList>
           <TabsContent value="items"><MenuItemsTab /></TabsContent>
           <TabsContent value="options"><OptionsTab /></TabsContent>
           <TabsContent value="hours"><CafeHoursTab /></TabsContent>
           <TabsContent value="users"><AdminUsersTab /></TabsContent>
+          <TabsContent value="pin"><ChangePinTab /></TabsContent>
         </Tabs>
       </AdminShell>
     </AdminGuard>
