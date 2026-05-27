@@ -1,6 +1,7 @@
 import Layout from "@/components/site/Layout";
 import TileLink from "@/components/site/TileLink";
 import { Link } from "react-router-dom";
+import heroGlasshouse from "@/assets/hero-glasshouse-logo.png";
 import heroDish from "@/assets/hero-dish.jpg";
 import heroInterior from "@/assets/hero-interior.jpg";
 import heroWine from "@/assets/hero-wine.jpg";
@@ -8,7 +9,7 @@ import menuBrunch from "@/assets/menu-brunch.jpg";
 import aboutHero from "@/assets/about-hero.jpg";
 import vouchersHero from "@/assets/vouchers-hero.jpg";
 
-const slides = [heroDish, heroInterior, heroWine];
+const slides = [heroGlasshouse, heroDish, heroInterior, heroWine];
 
 const Index = () => {
   return (
