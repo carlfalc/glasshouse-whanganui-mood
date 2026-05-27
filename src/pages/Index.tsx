@@ -24,12 +24,12 @@ const Index = () => {
             key={src}
             src={src}
             alt=""
-            className="absolute inset-0 w-full h-full object-cover carousel-slide"
+            className="absolute inset-0 w-full h-full object-cover object-top carousel-slide"
             style={{ animationDelay: `${i * 5}s` }}
           />
         ))}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/20 to-black/80" />
-        <div className="relative z-10 h-full container-narrow flex flex-col justify-end pb-24 md:pb-32">
+        <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/30 to-black/85" />
+        <div className="relative z-10 h-full container-narrow flex flex-col justify-end pb-10 md:pb-14">
           <h1 className="font-serif text-cream text-3xl md:text-5xl lg:text-6xl tracked-tight uppercase fade-up">
             Creative New Zealand Dining.
           </h1>
