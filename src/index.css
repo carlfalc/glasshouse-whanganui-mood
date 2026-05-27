@@ -106,5 +106,5 @@
 }
 .carousel-slide {
   opacity: 0;
-  animation: crossFade 10s infinite;
+  animation: crossFade 20s infinite;
 }
