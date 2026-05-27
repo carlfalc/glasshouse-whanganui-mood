@@ -9,7 +9,7 @@ import menuBrunch from "@/assets/menu-brunch.jpg";
 import aboutHero from "@/assets/about-hero.jpg";
 import vouchersHero from "@/assets/vouchers-hero.jpg";
 
-const slides = [heroGlasshouse, heroDish, heroInterior, heroWine];
+const slides = [heroGlasshouse, heroWine];
 
 const Index = () => {
   return (
