@@ -14,7 +14,7 @@ const Vouchers = () => (
       <img src={vouchersHero} alt="" className="absolute inset-0 w-full h-full object-cover" />
       <div className="absolute inset-0 bg-gradient-to-b from-black/40 to-black/70" />
       <div className="relative z-10 h-full container-narrow flex flex-col justify-end pb-16">
-        <p className="text-[11px] uppercase tracked text-brass mb-4">Glass House</p>
+        <p className="text-[11px] uppercase tracked text-brass mb-4">​</p>
         <h1 className="font-serif text-5xl md:text-6xl text-cream">Gift Vouchers</h1>
       </div>
     </section>

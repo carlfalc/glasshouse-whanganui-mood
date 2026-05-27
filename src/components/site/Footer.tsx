@@ -6,7 +6,7 @@ const Footer = () => {
     <footer className="bg-background border-t border-border text-cream">
       <div className="container-narrow py-20 grid grid-cols-1 md:grid-cols-3 gap-12">
         <div>
-          <Link to="/" className="font-serif text-3xl">Glass House</Link>
+          <Link to="/" className="font-serif text-3xl">​</Link>
           <p className="mt-6 text-sm text-cream/70 leading-relaxed">
             [ADDRESS — TO ADD]<br />
             Whanganui, New Zealand
@@ -44,7 +44,7 @@ const Footer = () => {
 
       <div className="border-t border-border">
         <div className="container-narrow py-6 flex flex-col md:flex-row justify-between gap-2 text-[11px] uppercase tracked text-cream/50">
-          <span>© Glass House Whanganui</span>
+          <span>© ​ Whanganui</span>
           <span>Creative New Zealand Dining.</span>
         </div>
       </div>
