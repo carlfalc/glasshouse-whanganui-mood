@@ -11,7 +11,7 @@ const team = [
 const OurPeople = () => (
   <Layout title="Our People — Glass House Whanganui" description="Meet the chefs and team behind Glass House in Whanganui, New Zealand.">
     <section className="pt-40 pb-12 text-center container-narrow">
-      <p className="text-[11px] uppercase tracked text-brass mb-6">Glass House</p>
+      <p className="text-[11px] uppercase tracked text-brass mb-6">​</p>
       <h1 className="font-serif text-5xl md:text-6xl text-cream">Our People</h1>
       <div className="w-12 h-px bg-brass mx-auto mt-8" />
     </section>

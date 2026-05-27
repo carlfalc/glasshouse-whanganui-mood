@@ -41,7 +41,7 @@ const Header = () => {
           aria-label="Glass House home"
           className="font-serif text-2xl tracking-tight text-cream"
         >
-          Glass House
+          ​
         </Link>
 
         <nav className="hidden lg:flex items-center gap-10">

@@ -6,7 +6,7 @@ const Footer = () => {
     <footer className="bg-background border-t border-border text-cream">
       <div className="container-narrow py-20 grid grid-cols-1 md:grid-cols-3 gap-12">
         <div>
-          <Link to="/" className="font-serif text-3xl">Glass House</Link>
+          <Link to="/" className="font-serif text-3xl">​</Link>
           <p className="mt-6 text-sm text-cream/70 leading-relaxed">
             [ADDRESS — TO ADD]<br />
             Whanganui, New Zealand
