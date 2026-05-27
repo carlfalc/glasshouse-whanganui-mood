@@ -18,15 +18,13 @@ const Index = () => {
       description="Glass House is a modern fine-dining restaurant in Whanganui, New Zealand. Creative New Zealand dining, refined seasonal menus, an intimate room."
     >
       {/* HERO */}
-      <section className="relative h-screen w-full overflow-hidden bg-[#0d2818]">
+      <section className="relative h-screen w-full overflow-hidden">
         {slides.map((src, i) => (
           <img
             key={src}
             src={src}
             alt=""
-            className={`absolute inset-0 w-full h-full carousel-slide ${
-              src === heroGlasshouse ? "object-contain object-top" : "object-cover object-top"
-            }`}
+            className="absolute inset-0 w-full h-full object-cover object-top carousel-slide"
             style={{ animationDelay: `${i * 5}s` }}
           />
         ))}
