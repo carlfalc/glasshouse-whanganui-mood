@@ -28,7 +28,7 @@ const Index = () => {
             style={{ animationDelay: `${i * 10}s` }}
           />
         ))}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/30 to-black/85" />
+        
         <div className="relative z-10 h-full container-narrow flex flex-col justify-end pb-10 md:pb-14">
           <h1 className="font-serif text-cream text-3xl md:text-5xl lg:text-6xl tracked-tight uppercase fade-up">
             Creative New Zealand Dining.
