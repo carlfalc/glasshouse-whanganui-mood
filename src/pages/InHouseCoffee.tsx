@@ -19,6 +19,7 @@ import {
   DialogDescription,
   DialogFooter,
 } from "@/components/ui/dialog";
+import { Checkbox } from "@/components/ui/checkbox";
 import { toast } from "@/hooks/use-toast";
 import { Minus, Plus } from "lucide-react";
 
@@ -59,6 +60,7 @@ const InHouseCoffee = () => {
   const [selectedCoffee, setSelectedCoffee] = useState<string | null>(null);
   const [sugar, setSugar] = useState(0);
   const [milk, setMilk] = useState("Full Cream");
+  const [decaf, setDecaf] = useState(false);
   const [delivery, setDelivery] = useState<"room" | "counter">("room");
 
   const openCoffee = (coffee: string) => {
@@ -76,13 +78,14 @@ const InHouseCoffee = () => {
     setSelectedCoffee(coffee);
     setSugar(0);
     setMilk("Full Cream");
+    setDecaf(false);
     setDelivery("room");
   };
 
   const handleSave = () => {
     toast({
       title: "Order received",
-      description: `${selectedCoffee} for ${name} — Room/Unit ${accomNumber}. ${
+      description: `${decaf ? "Decaf " : ""}${selectedCoffee} for ${name} — Room/Unit ${accomNumber}. ${
         delivery === "room" ? "Room/Unit delivery." : "Pick up from Glass House counter."
       }`,
     });
@@ -208,6 +211,20 @@ const InHouseCoffee = () => {
                 ))}
               </RadioGroup>
             </div>
+
+            {/* Decaf */}
+            <div className="flex items-center space-x-2">
+              <Checkbox
+                id="decaf"
+                checked={decaf}
+                onCheckedChange={(c) => setDecaf(c === true)}
+              />
+              <Label htmlFor="decaf" className="cursor-pointer">
+                Decaf
+              </Label>
+            </div>
+
+
 
             {/* Delivery */}
             <div>
