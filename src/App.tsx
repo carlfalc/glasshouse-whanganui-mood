@@ -11,6 +11,7 @@ import RoomService from "./pages/RoomService.tsx";
 import About from "./pages/About.tsx";
 import OurPeople from "./pages/OurPeople.tsx";
 import Vouchers from "./pages/Vouchers.tsx";
+import OrderCoffee from "./pages/OrderCoffee.tsx";
 import Contact from "./pages/Contact.tsx";
 import NotFound from "./pages/NotFound.tsx";
 import AdminLogin from "./pages/coffee/AdminLogin.tsx";
