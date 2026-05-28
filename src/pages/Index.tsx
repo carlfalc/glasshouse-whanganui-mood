@@ -1,7 +1,8 @@
 import Layout from "@/components/site/Layout";
 import TileLink from "@/components/site/TileLink";
 import { Link } from "react-router-dom";
-import heroGlasshouse from "@/assets/hero-glasshouse-logo.png";
+import heroGreenBg from "@/assets/hero-green-bg.jpg";
+import glasshouseWordmark from "@/assets/glasshouse-wordmark.png";
 import heroDish from "@/assets/hero-dish.jpg";
 import heroInterior from "@/assets/hero-interior.jpg";
 import heroWine from "@/assets/hero-wine.jpg";
@@ -9,7 +10,11 @@ import menuBrunch from "@/assets/menu-brunch.jpg";
 import aboutHero from "@/assets/about-hero.jpg";
 import vouchersHero from "@/assets/vouchers-hero.jpg";
 
-const slides = [heroGlasshouse, heroWine];
+const slides = [heroGreenBg, heroWine];
+
+// ↓↓↓ Tweak these to move the GLASSHOUSE wordmark on the first slide ↓↓↓
+const WORDMARK_TOP_PERCENT = 38; // vertical position (0 = top, 100 = bottom)
+const WORDMARK_WIDTH_PERCENT = 55; // size of the wordmark as % of viewport width
 const slideDuration = 10;
 
 const Index = () => {
@@ -29,6 +34,18 @@ const Index = () => {
             style={{ animationDelay: `${i * slideDuration}s` }}
           />
         ))}
+
+        {/* GLASSHOUSE wordmark overlay — sits on top of the first (green) slide */}
+        <img
+          src={glasshouseWordmark}
+          alt="Glasshouse"
+          className="absolute left-1/2 -translate-x-1/2 -translate-y-1/2 z-[5] carousel-slide pointer-events-none select-none"
+          style={{
+            top: `${WORDMARK_TOP_PERCENT}%`,
+            width: `${WORDMARK_WIDTH_PERCENT}%`,
+            animationDelay: `0s`,
+          }}
+        />
         
         <div className="relative z-10 h-full container-narrow flex flex-col justify-end pb-10 md:pb-14">
           <h1 className="font-serif text-cream text-3xl md:text-5xl lg:text-6xl tracked-tight uppercase fade-up">
