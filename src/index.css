@@ -100,11 +100,13 @@
   to   { opacity: 1; transform: translateY(0); }
 }
 @keyframes crossFade {
-  0%, 45%   { opacity: 1; }
-  50%, 95%  { opacity: 0; }
-  100%      { opacity: 1; }
+  0%   { opacity: 1; }
+  45%  { opacity: 1; }
+  55%  { opacity: 0; }
+  95%  { opacity: 0; }
+  100% { opacity: 1; }
 }
 .carousel-slide {
   opacity: 0;
-  animation: crossFade 20s infinite;
+  animation: crossFade 30s infinite;
 }
