@@ -10,6 +10,7 @@ import aboutHero from "@/assets/about-hero.jpg";
 import vouchersHero from "@/assets/vouchers-hero.jpg";
 
 const slides = [heroGlasshouse, heroWine];
+const slideDuration = 10;
 
 const Index = () => {
   return (
@@ -25,7 +26,7 @@ const Index = () => {
             src={src}
             alt=""
             className="absolute inset-0 w-full h-full object-cover object-top carousel-slide"
-            style={{ animationDelay: `${i * 10}s` }}
+            style={{ animationDelay: `${i * slideDuration}s` }}
           />
         ))}
         
