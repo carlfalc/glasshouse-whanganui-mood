@@ -6,7 +6,7 @@ const navItems = [
   { to: "/menus", label: "Menus" },
   { to: "/about", label: "About" },
   { to: "/our-people", label: "Our People" },
-  { to: "/vouchers", label: "Vouchers" },
+  { to: "/order-coffee", label: "Order Coffee" },
   { to: "/contact", label: "Contact" },
 ];
 
