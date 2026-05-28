@@ -157,7 +157,7 @@ const InHouseCoffee = () => {
               {selectedCoffee}
             </DialogTitle>
             <DialogDescription>
-              {name} — {accomType === "room" ? "Room" : "Unit"} {accomNumber}
+              {name} — Room/Unit {accomNumber}
             </DialogDescription>
           </DialogHeader>
 
@@ -215,7 +215,7 @@ const InHouseCoffee = () => {
                 <div className="flex items-center space-x-2">
                   <RadioGroupItem value="room" id="del-room" />
                   <Label htmlFor="del-room" className="cursor-pointer">
-                    {accomType === "room" ? "Room" : "Unit"} delivery
+                    Room/Unit delivery
                   </Label>
                 </div>
                 <div className="flex items-center space-x-2">
