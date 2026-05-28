@@ -31,8 +31,8 @@ const Index = () => {
         ))}
         
         <div className="relative z-10 h-full container-narrow flex flex-col justify-end pb-10 md:pb-14">
-          <h1 className="font-serif text-cream text-3xl md:text-5xl lg:text-6xl tracked-tight uppercase fade-up">
-            Creative New Zealand Dining.
+          <h1 className="font-serif text-cream md:text-5xl lg:text-6xl tracked-tight uppercase fade-up text-4xl">
+            Where the garden comes inside
           </h1>
           <div className="mt-10 flex flex-wrap gap-4 fade-up" style={{ animationDelay: "200ms" }}>
             <Link
