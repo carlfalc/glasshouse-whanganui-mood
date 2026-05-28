@@ -19,6 +19,7 @@ import {
   DialogDescription,
   DialogFooter,
 } from "@/components/ui/dialog";
+import { Checkbox } from "@/components/ui/checkbox";
 import { toast } from "@/hooks/use-toast";
 import { Minus, Plus } from "lucide-react";
 
@@ -210,6 +211,20 @@ const InHouseCoffee = () => {
                 ))}
               </RadioGroup>
             </div>
+
+            {/* Decaf */}
+            <div className="flex items-center space-x-2">
+              <Checkbox
+                id="decaf"
+                checked={decaf}
+                onCheckedChange={(c) => setDecaf(c === true)}
+              />
+              <Label htmlFor="decaf" className="cursor-pointer">
+                Decaf
+              </Label>
+            </div>
+
+
 
             {/* Delivery */}
             <div>
