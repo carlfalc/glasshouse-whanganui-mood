@@ -22,7 +22,11 @@ import {
 import { toast } from "@/hooks/use-toast";
 import { Minus, Plus } from "lucide-react";
 
-const ROOM_NUMBERS = Array.from({ length: 14 }, (_, i) => 801 + i); // 801-814
+const ROOM_NUMBERS = [
+  ...Array.from({ length: 14 }, (_, i) => i + 1), // 1-14
+  ...Array.from({ length: 14 }, (_, i) => 801 + i), // 801-814
+  ...Array.from({ length: 23 }, (_, i) => 844 + i), // 844-866
+];
 
 const COFFEES = [
   "Flat White",
