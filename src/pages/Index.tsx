@@ -10,7 +10,7 @@ import aboutHero from "@/assets/about-hero.jpg";
 import vouchersHero from "@/assets/vouchers-hero.jpg";
 
 const slides = [heroGlasshouse, heroWine];
-const slideDuration = 10;
+const slideDuration = 15;
 
 const Index = () => {
   return (
