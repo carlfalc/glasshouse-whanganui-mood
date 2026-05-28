@@ -22,10 +22,7 @@ import {
 import { toast } from "@/hooks/use-toast";
 import { Minus, Plus } from "lucide-react";
 
-type AccomType = "room" | "unit";
-
 const ROOM_NUMBERS = Array.from({ length: 14 }, (_, i) => 801 + i); // 801-814
-const UNIT_NUMBERS = Array.from({ length: 23 }, (_, i) => 844 + i); // 844-866
 
 const COFFEES = [
   "Flat White",
@@ -53,15 +50,12 @@ const MILK_OPTIONS = [
 ];
 
 const InHouseCoffee = () => {
-  const [accomType, setAccomType] = useState<AccomType>("room");
   const [accomNumber, setAccomNumber] = useState<string>("");
   const [name, setName] = useState("");
   const [selectedCoffee, setSelectedCoffee] = useState<string | null>(null);
   const [sugar, setSugar] = useState(0);
   const [milk, setMilk] = useState("Full Cream");
   const [delivery, setDelivery] = useState<"room" | "counter">("room");
-
-  const numbers = accomType === "room" ? ROOM_NUMBERS : UNIT_NUMBERS;
 
   const openCoffee = (coffee: string) => {
     if (!accomNumber) {
@@ -84,8 +78,8 @@ const InHouseCoffee = () => {
   const handleSave = () => {
     toast({
       title: "Order received",
-      description: `${selectedCoffee} for ${name} — ${accomType === "room" ? "Room" : "Unit"} ${accomNumber}. ${
-        delivery === "room" ? "Room delivery." : "Pick up from Glass House counter."
+      description: `${selectedCoffee} for ${name} — Room/Unit ${accomNumber}. ${
+        delivery === "room" ? "Room/Unit delivery." : "Pick up from Glass House counter."
       }`,
     });
     setSelectedCoffee(null);
@@ -105,43 +99,21 @@ const InHouseCoffee = () => {
             In House Coffee Order
           </h1>
 
-          {/* Accommodation + number */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
-            <div>
-              <Label className="text-cream mb-2 block">Room or Unit</Label>
-              <Select
-                value={accomType}
-                onValueChange={(v: AccomType) => {
-                  setAccomType(v);
-                  setAccomNumber("");
-                }}
-              >
-                <SelectTrigger>
-                  <SelectValue />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="room">Room</SelectItem>
-                  <SelectItem value="unit">Unit</SelectItem>
-                </SelectContent>
-              </Select>
-            </div>
-            <div>
-              <Label className="text-cream mb-2 block">
-                {accomType === "room" ? "Room" : "Unit"} Number
-              </Label>
-              <Select value={accomNumber} onValueChange={setAccomNumber}>
-                <SelectTrigger>
-                  <SelectValue placeholder="Select number" />
-                </SelectTrigger>
-                <SelectContent>
-                  {numbers.map((n) => (
-                    <SelectItem key={n} value={String(n)}>
-                      {n}
-                    </SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
-            </div>
+          {/* Room/Unit number */}
+          <div className="mb-6">
+            <Label className="text-cream mb-2 block">Select Room or Unit Number</Label>
+            <Select value={accomNumber} onValueChange={setAccomNumber}>
+              <SelectTrigger>
+                <SelectValue placeholder="Select number" />
+              </SelectTrigger>
+              <SelectContent>
+                {ROOM_NUMBERS.map((n) => (
+                  <SelectItem key={n} value={String(n)}>
+                    {n}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
           </div>
 
           {/* Name */}
@@ -185,7 +157,7 @@ const InHouseCoffee = () => {
               {selectedCoffee}
             </DialogTitle>
             <DialogDescription>
-              {name} — {accomType === "room" ? "Room" : "Unit"} {accomNumber}
+              {name} — Room/Unit {accomNumber}
             </DialogDescription>
           </DialogHeader>
 
@@ -243,7 +215,7 @@ const InHouseCoffee = () => {
                 <div className="flex items-center space-x-2">
                   <RadioGroupItem value="room" id="del-room" />
                   <Label htmlFor="del-room" className="cursor-pointer">
-                    {accomType === "room" ? "Room" : "Unit"} delivery
+                    Room/Unit delivery
                   </Label>
                 </div>
                 <div className="flex items-center space-x-2">
