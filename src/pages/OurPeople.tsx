@@ -2,7 +2,7 @@ import Layout from "@/components/site/Layout";
 import portrait from "@/assets/about-hero.jpg";
 
 const team = [
-  { name: "[Head Chef Name]", role: "Head Chef", bio: "[Short 1–2 line bio — to add.]" },
+  { name: "Matthew Tressider", role: "Executive Chef", bio: "[Short 1–2 line bio — to add.]" },
   { name: "[Sous Chef Name]", role: "Sous Chef", bio: "[Short 1–2 line bio — to add.]" },
   { name: "[Manager Name]", role: "Restaurant Manager", bio: "[Short 1–2 line bio — to add.]" },
   { name: "[Sommelier Name]", role: "Sommelier", bio: "[Short 1–2 line bio — to add.]" },
