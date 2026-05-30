@@ -20,13 +20,13 @@ const About = () => (
         </h2>
         <div className="text-cream/75 leading-relaxed space-y-5 text-base">
           <p>
-            [OUR STORY — TO ADD] Glass House began as a simple idea: a refined dining room in the centre of Whanganui, dedicated to the produce of the river, the coast, and the country around it.
+            Glasshouse began as a simple idea: a refined dining room in the centre of Whanganui, with an airy light filled room that connects to dining and drinks outdoors. Our Glasshouse is dedicated to the produce around the river, the coast, and the country around it.
           </p>
           <p>
-            [PARAGRAPH TWO — TO ADD] The room is intentionally small. The team is intentionally close. Our menus shift with the seasons, written each week around what arrives at the door.
+            The dining room is intentionally small. The team is intentionally close. Our menus shift with the seasons, as long as it always brings together our travellers and our community.
           </p>
           <p>
-            [PARAGRAPH THREE — TO ADD] We hope you'll join us.
+            We have brought together some of NZ and worlds talented chefs, youth olympic bronze medalist, Monin NZ 2026 mixologist champion and a 'coffee nerd'. We hope you'll join us chilling not with fine dining, just a place we can share for everyone.
           </p>
         </div>
       </div>
