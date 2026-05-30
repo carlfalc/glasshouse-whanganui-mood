@@ -3,9 +3,12 @@ import portrait from "@/assets/about-hero.jpg";
 
 const team = [
   { name: "Matthew Tressider", role: "Executive Chef", bio: "[Short 1–2 line bio — to add.]" },
-  { name: "[Sous Chef Name]", role: "Sous Chef", bio: "[Short 1–2 line bio — to add.]" },
-  { name: "[Manager Name]", role: "Restaurant Manager", bio: "[Short 1–2 line bio — to add.]" },
-  { name: "[Sommelier Name]", role: "Sommelier", bio: "[Short 1–2 line bio — to add.]" },
+  { name: "Robbie Beint", role: "Sous Chef", bio: "[Short 1–2 line bio — to add.]" },
+  { name: "Kumar Sanket", role: "Sous Chef", bio: "[Short 1–2 line bio — to add.]" },
+  { name: "Naureen Shaik", role: "Sous Chef", bio: "[Short 1–2 line bio — to add.]" },
+  { name: "Muhammad Rehan", role: "Sous Chef", bio: "[Short 1–2 line bio — to add.]" },
+  { name: "Saroj Bhandari", role: "Sous Chef", bio: "[Short 1–2 line bio — to add.]" },
+  { name: "Nicola Wright", role: "Chef", bio: "[Short 1–2 line bio — to add.]" },
 ];
 
 const OurPeople = () => (
