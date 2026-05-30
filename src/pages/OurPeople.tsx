@@ -22,7 +22,7 @@ const OurPeople = () => (
     <section className="container-narrow pb-32">
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-14 max-w-5xl mx-auto">
         {team.map((m) => (
-          <article key={m.role} className="text-center">
+          <article key={m.name} className="text-center">
             <div className="aspect-[4/5] overflow-hidden mb-6 bg-muted">
               <img src={portrait} alt={`${m.name} — ${m.role}`} loading="lazy" className="w-full h-full object-cover grayscale opacity-90" />
             </div>
