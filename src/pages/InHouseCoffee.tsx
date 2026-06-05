@@ -21,6 +21,7 @@ import {
 } from "@/components/ui/dialog";
 import { Checkbox } from "@/components/ui/checkbox";
 import { toast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 import { Minus, Plus } from "lucide-react";
 
 const ROOM_NUMBERS = [
@@ -86,7 +87,9 @@ const InHouseCoffee = () => {
     setTakeawaySize("");
   };
 
-  const handleSave = () => {
+  const [saving, setSaving] = useState(false);
+
+  const handleSave = async () => {
     if (!cupType) {
       toast({ title: "Please choose a Cup or Takeaway Cup", variant: "destructive" });
       return;
@@ -99,13 +102,42 @@ const InHouseCoffee = () => {
       cupType === "takeaway"
         ? `Takeaway Cup (${takeawaySize === "regular" ? "Regular" : "Large"})`
         : "Cup";
-    toast({
-      title: "Order received",
-      description: `${decaf ? "Decaf " : ""}${selectedCoffee} for ${name} — Room/Unit ${accomNumber}. ${cupLabel}. ${
-        delivery === "room" ? "Room/Unit delivery." : "Pick up from Glass House counter."
-      }`,
-    });
-    setSelectedCoffee(null);
+
+    const item = {
+      coffee: selectedCoffee,
+      decaf,
+      sugar,
+      milk,
+      cup: cupLabel,
+    };
+
+    setSaving(true);
+    try {
+      const { error } = await supabase.from("coffee_orders").insert({
+        room_number: accomNumber,
+        guest_name: name.trim(),
+        fulfilment_type: delivery === "room" ? "room_delivery" : "counter_pickup",
+        items: [item],
+        order_total: 0,
+        charged_to_room: true,
+        notes: `${decaf ? "Decaf " : ""}${selectedCoffee}. ${cupLabel}. Sugar: ${sugar}. Milk: ${milk}.`,
+      });
+
+      if (error) {
+        toast({ title: "Could not place order", description: error.message, variant: "destructive" });
+        return;
+      }
+
+      toast({
+        title: "Order received",
+        description: `${decaf ? "Decaf " : ""}${selectedCoffee} for ${name} — Room/Unit ${accomNumber}. ${cupLabel}. ${
+          delivery === "room" ? "Room/Unit delivery." : "Pick up from Glass House counter."
+        }`,
+      });
+      setSelectedCoffee(null);
+    } finally {
+      setSaving(false);
+    }
   };
 
   return (
@@ -320,7 +352,7 @@ const InHouseCoffee = () => {
             <Button variant="outline" onClick={() => setSelectedCoffee(null)}>
               Cancel
             </Button>
-            <Button onClick={handleSave}>Save Order</Button>
+            <Button onClick={handleSave} disabled={saving}>{saving ? "Saving…" : "Save Order"}</Button>
           </DialogFooter>
         </DialogContent>
       </Dialog>

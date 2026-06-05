@@ -7,7 +7,8 @@ import { Label } from "@/components/ui/label";
 import { useAdminAuth } from "@/hooks/useAdminAuth";
 
 export default function AdminLogin() {
-  const [pin, setPin] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const { session } = useAdminAuth();
@@ -21,40 +22,21 @@ export default function AdminLogin() {
     e.preventDefault();
     setError(null);
 
-    const trimmed = pin.trim();
-    if (!/^\d{4,12}$/.test(trimmed)) {
-      setError("Enter the 4–12 digit staff PIN.");
+    const trimmedEmail = email.trim().toLowerCase();
+    if (!trimmedEmail || !password) {
+      setError("Enter your email and password.");
       return;
     }
 
     setLoading(true);
     try {
-      const { data, error: invokeErr } = await supabase.functions.invoke("admin-pin-login", {
-        body: { pin: trimmed },
+      const { error: signInErr } = await supabase.auth.signInWithPassword({
+        email: trimmedEmail,
+        password,
       });
 
-      if (invokeErr) {
-        const message =
-          (invokeErr as { context?: { error?: string } }).context?.error ??
-          invokeErr.message ??
-          "Sign-in failed";
-        setError(message);
-        return;
-      }
-
-      const { email, token } = (data ?? {}) as { email?: string; token?: string };
-      if (!email || !token) {
-        setError("Sign-in failed. Try again.");
-        return;
-      }
-
-      const { error: verifyErr } = await supabase.auth.verifyOtp({
-        email,
-        token,
-        type: "email",
-      });
-      if (verifyErr) {
-        setError(verifyErr.message);
+      if (signInErr) {
+        setError(signInErr.message);
         return;
       }
 
@@ -68,31 +50,42 @@ export default function AdminLogin() {
     <div className="min-h-screen flex items-center justify-center bg-slate-50 p-6">
       <div className="w-full max-w-md bg-white rounded-xl shadow-sm border border-slate-200 p-8">
         <h1 className="text-2xl font-semibold text-slate-900 mb-1 text-center">Coffee Admin</h1>
-        <p className="text-slate-500 text-sm text-center mb-6">Enter the staff PIN to continue</p>
+        <p className="text-slate-500 text-sm text-center mb-6">Sign in to continue</p>
 
         <form onSubmit={onSubmit} className="space-y-4">
           <div>
-            <Label htmlFor="pin">Staff PIN</Label>
+            <Label htmlFor="email">Email</Label>
             <Input
-              id="pin"
-              type="password"
-              inputMode="numeric"
-              autoComplete="one-time-code"
+              id="email"
+              type="email"
+              autoComplete="email"
               required
-              value={pin}
-              onChange={(e) => setPin(e.target.value.replace(/[^0-9]/g, ""))}
-              placeholder="••••"
-              className="mt-1 text-center tracking-[0.5em] text-lg"
-              maxLength={12}
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="you@example.com"
+              className="mt-1"
+            />
+          </div>
+          <div>
+            <Label htmlFor="password">Password</Label>
+            <Input
+              id="password"
+              type="password"
+              autoComplete="current-password"
+              required
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              placeholder="••••••••"
+              className="mt-1"
             />
           </div>
           {error && <p className="text-sm text-red-600">{error}</p>}
           <Button
             type="submit"
-            disabled={loading || pin.length < 4}
+            disabled={loading || !email || !password}
             className="w-full bg-[hsl(25_45%_25%)] hover:bg-[hsl(25_45%_20%)] text-white"
           >
-            {loading ? "Signing in…" : "Enter admin"}
+            {loading ? "Signing in…" : "Sign in"}
           </Button>
         </form>
       </div>
