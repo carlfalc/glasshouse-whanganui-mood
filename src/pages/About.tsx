@@ -35,9 +35,9 @@ const About = () => (
     <section className="bg-cream text-charcoal py-28 md:py-36">
       <div className="container-narrow max-w-3xl text-center">
         <p className="font-serif italic text-3xl md:text-4xl leading-snug">
-          "[A SHORT PULL QUOTE — TO ADD] — perhaps a line about hospitality, place, or the people who cook here."
+          "Meals make the society, hold the fabric together in lots of ways that were charming and interesting and intoxicating to me."
         </p>
-        <p className="mt-8 text-[11px] uppercase tracked text-brass">— [Attribution]</p>
+        <p className="mt-8 text-[11px] uppercase tracked text-brass">— Anthony Bourdain</p>
       </div>
     </section>
 
