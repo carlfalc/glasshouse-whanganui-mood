@@ -48,7 +48,7 @@ const Header = () => {
         <nav className="hidden lg:flex items-center gap-10">
           {navItems.map((item) => (
             <NavLink
-              key={item.to}
+              key={item.label}
               to={item.to}
               className={({ isActive }) =>
                 `text-[11px] uppercase tracked text-cream/85 hover:text-brass transition-colors ${
@@ -93,7 +93,7 @@ const Header = () => {
         <nav className="flex flex-col items-center justify-center gap-8 pt-16">
           {navItems.map((item) => (
             <Link
-              key={item.to}
+              key={item.label}
               to={item.to}
               className="font-serif text-4xl text-cream hover:text-brass transition-colors"
             >
