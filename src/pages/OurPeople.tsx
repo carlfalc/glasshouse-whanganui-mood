@@ -1,181 +1,207 @@
-import { useEffect, useState, useCallback, useRef } from "react";
 import Layout from "@/components/site/Layout";
-import portrait from "@/assets/about-hero.jpg";
-import { supabase } from "@/integrations/supabase/client";
-import { useAdminAuth } from "@/hooks/useAdminAuth";
-import { toast } from "@/hooks/use-toast";
-import { GripVertical } from "lucide-react";
 
-type Member = {
-  id: string;
-  name: string;
-  role: string;
-  tier: string;
-  bio: string;
-  sort_order: number;
-};
+const kitchenCredentials = [
+  {
+    title: "Michelin Guide-linked experience",
+    body: "One of our senior chefs has worked in a Michelin Guide-listed restaurant in California (USA), bringing fine-dining discipline and standards to our kitchen.",
+  },
+  {
+    title: "Internationally acclaimed training",
+    body: "A Bronze Medalist at the International Young Chef Olympiad 2023, with Michelin-linked training exposure and a refined French cuisine background developed across France and New Zealand.",
+  },
+  {
+    title: "Premium global hotel pedigree",
+    body: "Experience across world-renowned establishments including Marina Bay Sands (Singapore), Burj Al Arab, Hilton Dubai Palm Jumeirah and Jumeirah (Dubai), Rotana, Accor and Marriott hotel groups.",
+  },
+  {
+    title: "Red Seal certified leadership",
+    body: "A Canadian Red Seal-certified chef (Vancouver), with Executive Chef and Head Chef experience across steakhouses, golf clubs and lodge dining, now settled locally in Whanganui.",
+  },
+  {
+    title: "Degree-qualified culinary leadership",
+    body: "A chef holding a BA in Hospitality Management from Edinburgh Napier University (Scotland, UK), with senior roles across leading New Zealand hospitality groups and US kitchens.",
+  },
+  {
+    title: "New Zealand-qualified hotel specialists",
+    body: "Chefs holding NZQF Level 5 Diplomas in Culinary Art, with deep experience in hotel breakfast, conferencing, banqueting and all-day dining.",
+  },
+  {
+    title: "Broad cuisine range",
+    body: "Collective expertise across Continental, French, Indian, Korean, Japanese, Italian, Mexican and modern New Zealand cuisine.",
+  },
+];
 
-const tierOrder: Record<string, number> = { executive: 0, sous: 1, breakfast: 2 };
+const fohCredentials = [
+  {
+    title: "New Zealand National Mixology Champion",
+    body: "Congratulations to Sandesh Thapa, the reigning MONIN Cup New Zealand 2026 Champion, crowned national champion under the “Timeless Twists” theme. He will represent New Zealand on the global stage at the World Championships in September 2026, and will anchor our bar and beverage programme from day one.",
+  },
+  {
+    title: "Experienced restaurant & bar management",
+    body: "Our Complex Manager holds a Master’s in Hospitality Management, along with a current Manager’s Certificate and Licence Controller Qualification (LCQ), with general management experience in a comparable venue.",
+  },
+  {
+    title: "Specialist barista & coffee programme",
+    body: "A dedicated barista and coffee specialist to lead our barista and self-serve coffee offering across the buffet and bar.",
+  },
+  {
+    title: "Competition-level barista expertise",
+    body: "A barista who has trained and judged baristas at competitive level; a genuine coffee geek who loves crafting specialty coffee, ensuring our coffee programme is exceptional from day one. We have also partnered with Grinders Coffee — Australia’s number one coffee and bean company — for a premium café coffee experience.",
+  },
+];
 
-const Card = ({
-  m,
-  draggable,
-  onDragStart,
-  onDragOver,
-  onDrop,
-  isDragging,
-}: {
-  m: Member;
-  draggable: boolean;
-  onDragStart?: () => void;
-  onDragOver?: (e: React.DragEvent) => void;
-  onDrop?: () => void;
-  isDragging?: boolean;
-}) => (
-  <article
-    className={`text-center relative transition-opacity ${isDragging ? "opacity-40" : ""} ${draggable ? "cursor-grab active:cursor-grabbing" : ""}`}
-    draggable={draggable}
-    onDragStart={onDragStart}
-    onDragOver={onDragOver}
-    onDrop={onDrop}
-  >
-    {draggable && (
-      <span className="absolute top-2 right-2 z-10 rounded bg-background/70 p-1 text-brass" aria-hidden>
-        <GripVertical className="h-5 w-5" />
-      </span>
-    )}
-    <div className="aspect-[4/5] overflow-hidden mb-6 bg-muted">
-      <img src={portrait} alt={`${m.name} — ${m.role}`} loading="lazy" className="w-full h-full object-cover grayscale opacity-90 pointer-events-none" />
+const footprint = [
+  "Marina Bay Sands — Singapore",
+  "Burj Al Arab — Dubai, UAE",
+  "Jumeirah Group — Dubai, UAE",
+  "Hilton Dubai Palm Jumeirah — Dubai, UAE",
+  "Hilton — Malta",
+  "SAMAYA Hotels & Resorts — Dubai, UAE",
+  "Rotana Hotels — UAE",
+  "Accor Hotels — International",
+  "National Hotel (Marriott) — Moscow, Russia",
+  "Garden Restaurant — Moscow, Russia",
+  "Hotel Acquamarine — Moscow, Russia",
+  "Michelin Guide-listed restaurant — California, USA",
+  "ROOH — San Francisco & Palo Alto, USA",
+  "Tulsi — Los Angeles, California, USA",
+  "Zaika — Seattle, USA",
+  "Gaylord Opryland Resort — Nashville, USA",
+  "Vancouver Community College (Red Seal) — Canada",
+  "Sun Peaks Lodge Steakhouse — Canada",
+  "Meadow Gardens Golf Club — Vancouver, Canada",
+  "Northview Golf & Country Club — Canada",
+  "Capones Italian Kitchen — Canada",
+  "Edinburgh Napier University — Scotland, UK",
+  "Bowood Hotel, Spa & Golf — UK",
+  "Hotel La Mère Champlain — Cancale, France",
+  "Hotel Restaurant & Spa Julien — Fouday, Strasbourg, France",
+  "Hotel A l’Ami Fritz — Ottrott, France",
+  "Hotel Le Domaine de Baulieu — Auch, France",
+  "The Terrace Hotel (Head Chef) — Perth, Australia",
+  "The Iluka — Perth, Australia",
+  "Herb Faust Food / Houghton Winery — Perth, Australia",
+  "Crown Casino — Perth, Australia",
+  "Bouchon Bistro — Perth, Australia",
+  "Retro Café (Fitzroy) — Melbourne, Australia",
+  "Ganga Ratna Restaurant — Tokyo, Japan",
+  "Namaste Restaurant — Sumiyoshi, Fukuoka, Japan",
+  "Hotel Vaishali — Kathmandu, Nepal",
+  "Airport lounges & fine dining — Kolkata, India",
+  "Young Chef Olympiad — International",
+  "Star Group / Kapura Hospitality — Wellington, NZ",
+  "Heritage Hanmer Springs — Canterbury, NZ",
+  "Suncourt Hotel — Taupō, NZ",
+  "Brentwood Hotel — Wellington, NZ",
+  "Peppers Bluewater Resort — Lake Tekapo, NZ",
+  "Compass Group — New Zealand",
+  "Himalayan Fusion — Auckland, NZ",
+];
+
+const Credential = ({ title, body }: { title: string; body: string }) => (
+  <li className="flex gap-4">
+    <span className="text-brass shrink-0 mt-1" aria-hidden>
+      ✓
+    </span>
+    <div>
+      <h3 className="font-serif text-lg text-cream">{title}</h3>
+      <p className="text-sm text-cream/65 mt-1 leading-relaxed">{body}</p>
     </div>
-    <h3 className="font-serif text-2xl text-cream">{m.name}</h3>
-    <p className="text-[11px] uppercase tracked text-brass mt-2">{m.role}</p>
-    <p className="text-sm text-cream/65 mt-4 leading-relaxed">{m.bio || "[Short 1–2 line bio — to add.]"}</p>
-  </article>
+  </li>
 );
 
-const OurPeople = () => {
-  const { isAuthorized } = useAdminAuth();
-  const [members, setMembers] = useState<Member[]>([]);
-  const [loading, setLoading] = useState(true);
-  const dragId = useRef<string | null>(null);
-  const [draggingId, setDraggingId] = useState<string | null>(null);
+const SectionHeading = ({ children }: { children: React.ReactNode }) => (
+  <h2 className="text-[11px] uppercase tracked text-brass border-b border-border pb-4 mb-8">
+    {children}
+  </h2>
+);
 
-  const load = useCallback(async () => {
-    const { data, error } = await (supabase as any)
-      .from("team_members")
-      .select("id,name,role,tier,bio,sort_order");
-    if (!error && data) {
-      const sorted = (data as Member[]).sort(
-        (a, b) =>
-          (tierOrder[a.tier] ?? 99) - (tierOrder[b.tier] ?? 99) ||
-          a.sort_order - b.sort_order
-      );
-      setMembers(sorted);
-    }
-    setLoading(false);
-  }, []);
+const OurPeople = () => (
+  <Layout
+    title="Culinary Specialists — Glass House Whanganui"
+    description="Meet the internationally trained chefs, award-winning bar talent and certified leaders behind Glass House at The Avenue Hotel, Whanganui."
+  >
+    <section className="pt-40 pb-12 text-center container-narrow">
+      <p className="text-[11px] uppercase tracked text-brass mb-6">The Avenue Hotel • Whanganui</p>
+      <h1 className="font-serif text-5xl md:text-6xl text-cream">Culinary Specialists</h1>
+      <div className="w-12 h-px bg-brass mx-auto mt-8" />
+    </section>
 
-  useEffect(() => {
-    load();
-  }, [load]);
+    <section className="container-narrow pb-24 max-w-3xl mx-auto space-y-6">
+      <p className="font-serif text-2xl text-cream">Kia ora,</p>
+      <p className="text-cream/75 leading-relaxed">
+        Our recruitment attracted exceptional talent — and we’ve handpicked the best for the
+        Glasshouse. Great teams are built on humility, passion and genuine care for guests, shaped by
+        people who’ve lived, travelled and experienced the world.
+      </p>
+      <p className="text-cream/75 leading-relaxed">
+        Their journey begins here on 27 June, opening with an already curated menu. As we head into
+        our first summer, we’ll evolve the menus together, drawing on the talents of the whole team.
+        Every few weeks, one of our chefs takes the spotlight to create their own signature main —
+        find it on our menu as the ‘Seasonal Special’.
+      </p>
+    </section>
 
-  const executive = members.filter((m) => m.tier === "executive");
-  const sous = members.filter((m) => m.tier === "sous");
-  const breakfast = members.filter((m) => m.tier === "breakfast");
+    <section className="container-narrow pb-20 max-w-3xl mx-auto">
+      <SectionHeading>Kitchen Team — Calibre &amp; Credentials</SectionHeading>
+      <ul className="space-y-8">
+        {kitchenCredentials.map((c) => (
+          <Credential key={c.title} {...c} />
+        ))}
+      </ul>
+    </section>
 
-  const handleDrop = async (targetId: string) => {
-    const sourceId = dragId.current;
-    dragId.current = null;
-    setDraggingId(null);
-    if (!sourceId || sourceId === targetId) return;
+    <section className="container-narrow pb-20 max-w-3xl mx-auto">
+      <SectionHeading>Featured — Our French-Trained Sous Chef</SectionHeading>
+      <p className="text-cream/75 leading-relaxed">
+        Nandini, one of our incoming Sous Chefs, has had her culinary journey featured in{" "}
+        <span className="text-cream">The Telegraph India</span>, recognised as a young chef shining
+        on the international stage at the Young Chef Olympiad. Her story is well worth a read.
+      </p>
+    </section>
 
-    const source = members.find((m) => m.id === sourceId);
-    const target = members.find((m) => m.id === targetId);
-    if (!source || !target || source.tier !== target.tier) return;
+    <section className="container-narrow pb-20 max-w-3xl mx-auto">
+      <SectionHeading>Front of House &amp; Bar — Award-Winning Talent</SectionHeading>
+      <ul className="space-y-8">
+        {fohCredentials.map((c) => (
+          <Credential key={c.title} {...c} />
+        ))}
+      </ul>
+    </section>
 
-    const group = members.filter((m) => m.tier === source.tier);
-    const others = members.filter((m) => m.tier !== source.tier);
-    const fromIdx = group.findIndex((m) => m.id === sourceId);
-    const toIdx = group.findIndex((m) => m.id === targetId);
-    const reordered = [...group];
-    const [moved] = reordered.splice(fromIdx, 1);
-    reordered.splice(toIdx, 0, moved);
+    <section className="container-narrow pb-20 max-w-3xl mx-auto">
+      <SectionHeading>Where They’ve Been — A Global Footprint</SectionHeading>
+      <p className="text-cream/75 leading-relaxed mb-8">
+        Between them, our incoming team has trained, cooked and led in kitchens, hotels and bars
+        across the globe. A snapshot of the establishments and destinations on their collective CVs:
+      </p>
+      <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-3">
+        {footprint.map((place) => (
+          <li key={place} className="text-sm text-cream/65 border-b border-border/50 pb-2">
+            {place}
+          </li>
+        ))}
+      </ul>
+    </section>
 
-    const withOrder = reordered.map((m, i) => ({ ...m, sort_order: i }));
-    setMembers([...others, ...withOrder].sort(
-      (a, b) =>
-        (tierOrder[a.tier] ?? 99) - (tierOrder[b.tier] ?? 99) ||
-        a.sort_order - b.sort_order
-    ));
-
-    const updates = await Promise.all(
-      withOrder.map((m) =>
-        (supabase as any).from("team_members").update({ sort_order: m.sort_order }).eq("id", m.id)
-      )
-    );
-    if (updates.some((u: any) => u.error)) {
-      toast({ title: "Couldn't save order", description: "Please try again.", variant: "destructive" });
-      load();
-    } else {
-      toast({ title: "Order saved" });
-    }
-  };
-
-  const dragProps = (m: Member) =>
-    isAuthorized
-      ? {
-          draggable: true,
-          isDragging: draggingId === m.id,
-          onDragStart: () => {
-            dragId.current = m.id;
-            setDraggingId(m.id);
-          },
-          onDragOver: (e: React.DragEvent) => e.preventDefault(),
-          onDrop: () => handleDrop(m.id),
-        }
-      : { draggable: false };
-
-  return (
-    <Layout title="Our People — Glass House Whanganui" description="Meet the chefs and team behind Glass House in Whanganui, New Zealand.">
-      <section className="pt-40 pb-12 text-center container-narrow">
-        <p className="text-[11px] uppercase tracked text-brass mb-6">​</p>
-        <h1 className="font-serif text-5xl md:text-6xl text-cream">Our People</h1>
-        <div className="w-12 h-px bg-brass mx-auto mt-8" />
-        {isAuthorized && !loading && (
-          <p className="text-xs text-cream/50 mt-6">Admin mode — drag tiles within a group to reorder.</p>
-        )}
-      </section>
-
-      <section className="container-narrow pb-32 max-w-5xl mx-auto space-y-14 md:space-y-20">
-        {/* Executive Chef — top, centered alone */}
-        {executive.length > 0 && (
-          <div className="flex justify-center">
-            <div className="w-full max-w-xs">
-              <Card m={executive[0]} {...dragProps(executive[0])} />
-            </div>
-          </div>
-        )}
-
-        {/* Sous Chefs — 3 per row */}
-        {sous.length > 0 && (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-14">
-            {sous.map((m) => (
-              <Card key={m.id} m={m} {...dragProps(m)} />
-            ))}
-          </div>
-        )}
-
-        {/* Breakfast Chef — last, centered alone */}
-        {breakfast.length > 0 && (
-          <div className="flex justify-center">
-            <div className="w-full max-w-xs">
-              <Card m={breakfast[0]} {...dragProps(breakfast[0])} />
-            </div>
-          </div>
-        )}
-      </section>
-    </Layout>
-  );
-};
+    <section className="container-narrow pb-32 max-w-3xl mx-auto">
+      <SectionHeading>Why This Matters</SectionHeading>
+      <div className="space-y-6">
+        <p className="text-cream/75 leading-relaxed">
+          A new restaurant lives or dies on the strength of its team — and its prices! The calibre of
+          people choosing to join us — internationally trained chefs, award-winning mixology talent,
+          and qualified, certified leaders — is a strong signal of the standard we intend to set. We
+          genuinely believe this team can help make the Glasshouse the number one dining and bar
+          destination in Whanganui.
+        </p>
+        <p className="text-cream/75 leading-relaxed">
+          Once we hit daylight savings 2026, we’ll be open all day, Tuesday to Sunday — moving into
+          summer with an open door to our Whanganui community.
+        </p>
+        <p className="font-serif text-xl text-cream">Ngā mihi nui</p>
+      </div>
+    </section>
+  </Layout>
+);
 
 export default OurPeople;
