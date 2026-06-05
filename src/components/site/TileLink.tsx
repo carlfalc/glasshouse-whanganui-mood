@@ -6,7 +6,7 @@ interface Props {
   image: string;
   label: string;
   className?: string;
-  onClick?: (e: React.MouseEvent<HTMLAnchorElement>) => void;
+  onClick?: (e: MouseEvent<HTMLAnchorElement>) => void;
 }
 
 const TileLink = ({ to, image, label, className = "", onClick }: Props) => (
