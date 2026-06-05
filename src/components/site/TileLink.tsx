@@ -1,3 +1,4 @@
+import type { MouseEvent } from "react";
 import { Link } from "react-router-dom";
 
 interface Props {
@@ -5,11 +6,13 @@ interface Props {
   image: string;
   label: string;
   className?: string;
+  onClick?: (e: MouseEvent<HTMLAnchorElement>) => void;
 }
 
-const TileLink = ({ to, image, label, className = "" }: Props) => (
+const TileLink = ({ to, image, label, className = "", onClick }: Props) => (
   <Link
     to={to}
+    onClick={onClick}
     className={`group relative block overflow-hidden aspect-[4/5] ${className}`}
   >
     <img
