@@ -2,12 +2,14 @@ import { useState } from "react";
 import Layout from "@/components/site/Layout";
 import TileLink from "@/components/site/TileLink";
 import DinnerMenuDialog from "@/components/site/DinnerMenuDialog";
+import RoomServiceMenuDialog from "@/components/site/RoomServiceMenuDialog";
 import menuBrunch from "@/assets/menu-brunch.jpg";
 import menuDinner from "@/assets/menu-dinner.jpg";
 import menuRoom from "@/assets/menu-room-service.jpg";
 
 const Menus = () => {
   const [dinnerOpen, setDinnerOpen] = useState(false);
+  const [roomOpen, setRoomOpen] = useState(false);
 
   return (
     <Layout title="Menus — Glass House Whanganui" description="Brunch & Lunch, Dinner, and Room Service menus at Glass House, Whanganui.">
@@ -21,10 +23,11 @@ const Menus = () => {
           <TileLink to="/menus/brunch-lunch" image={menuBrunch} label="Brunch & Lunch" />
           <TileLink to="/menus" image={menuDinner} label="Dinner" onClick={(e) => { e.preventDefault(); setDinnerOpen(true); }} />
 
-          <TileLink to="/menus/room-service" image={menuRoom} label="Room Service" />
+          <TileLink to="/menus" image={menuRoom} label="Room Service" onClick={(e) => { e.preventDefault(); setRoomOpen(true); }} />
         </div>
       </section>
       <DinnerMenuDialog open={dinnerOpen} onOpenChange={setDinnerOpen} />
+      <RoomServiceMenuDialog open={roomOpen} onOpenChange={setRoomOpen} />
     </Layout>
   );
 };
