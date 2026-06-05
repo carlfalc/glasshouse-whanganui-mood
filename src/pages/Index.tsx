@@ -77,12 +77,19 @@ const Index = () => {
         <div className="container-narrow py-24 md:py-32 grid md:grid-cols-2 gap-12 items-center">
           <div>
             <p className="text-[11px] uppercase tracked text-brass mb-6">Find Us</p>
-            <h2 className="font-serif text-4xl md:text-5xl mb-8">Whanganui, New Zealand</h2>
+            <h2 className="font-serif text-4xl md:text-5xl mb-8">Whanganui</h2>
             <div className="space-y-2 text-base">
-              <p>[ADDRESS — TO ADD]</p>
+              <p className="text-[11px] uppercase tracking-wider text-brass">Address</p>
+              <p>379 Victoria Avenue</p>
+              <p>The Avenue Hotel</p>
               <p>Whanganui, New Zealand</p>
-              <p className="pt-4"><a href="tel:0062424177" className="hover:text-brass">06 242 4177</a></p>
-              <p className="text-charcoal/60">[OPENING HOURS — TO ADD]</p>
+              <p className="pt-4"><a href="tel:062424177" className="hover:text-brass font-bold">06 242 4177</a></p>
+              <div className="pt-6 space-y-1 text-charcoal/80">
+                <p className="text-[11px] uppercase tracking-wider text-brass mb-2">Opening Hours</p>
+                <p>Mon – Thursday · Dinner from 4pm</p>
+                <p>Friday to Saturday · Brunch & Lunch then Dinner from 10am to Late</p>
+                <p>Sun · Brunch & Lunch from 10am, Dinner 5 – 8pm</p>
+              </div>
             </div>
           </div>
           <div className="aspect-[4/3] w-full overflow-hidden">

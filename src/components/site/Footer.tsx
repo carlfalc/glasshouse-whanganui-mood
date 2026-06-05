@@ -8,11 +8,12 @@ const Footer = () => {
         <div>
           <Link to="/" className="font-serif text-3xl">​</Link>
           <p className="mt-6 text-sm text-cream/70 leading-relaxed">
-            [ADDRESS — TO ADD]<br />
+            379 Victoria Avenue<br />
+            The Avenue Hotel<br />
             Whanganui, New Zealand
           </p>
           <p className="mt-4 text-sm text-cream/70">
-            <a href="tel:0062424177" className="hover:text-brass">06 242 4177</a><br />
+            <a href="tel:062424177" className="hover:text-brass">06 242 4177</a><br />
             <span className="text-cream/50">[email — to add]</span>
           </p>
         </div>
@@ -31,9 +32,9 @@ const Footer = () => {
         <div>
           <h4 className="text-[11px] uppercase tracked text-brass mb-6">Hours</h4>
           <p className="text-sm text-cream/70 leading-relaxed">
-            [OPENING HOURS — TO ADD]<br />
-            Tue – Sat · Dinner from 5.30pm<br />
-            Sun · Brunch from 9am
+            Mon – Thursday · Dinner from 4pm<br />
+            Friday to Saturday · 10am to Late<br />
+            Sun · 10am to 8pm
           </p>
           <div className="flex gap-4 mt-6">
             <a href="#" aria-label="Instagram" className="text-cream/70 hover:text-brass"><Instagram size={18} /></a>
