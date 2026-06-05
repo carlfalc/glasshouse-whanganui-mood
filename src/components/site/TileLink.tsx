@@ -1,3 +1,4 @@
+import type { MouseEvent } from "react";
 import { Link } from "react-router-dom";
 
 interface Props {
