@@ -44,7 +44,6 @@ const App = () => (
           <Route path="/coffee/admin/login" element={<AdminLogin />} />
           <Route path="/coffee/admin" element={<AdminHome />} />
           <Route path="/coffee/admin/orders" element={<AdminOrders />} />
-          <Route path="/coffee/admin/history" element={<AdminDashboard />} />
           <Route path="/admindashboard" element={<AdminDashboard />} />
           <Route path="/coffee/admin/settings" element={<AdminSettings />} />
           <Route path="*" element={<NotFound />} />
