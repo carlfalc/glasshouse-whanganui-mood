@@ -240,7 +240,53 @@ const InHouseCoffee = () => {
               </Label>
             </div>
 
+            {/* Cup choice */}
+            <div>
+              <Label className="mb-2 block">Cup Choice</Label>
+              <RadioGroup
+                value={cupType}
+                onValueChange={(v: "cup" | "takeaway") => {
+                  setCupType(v);
+                  if (v !== "takeaway") setTakeawaySize("");
+                }}
+              >
+                <div className="flex items-center space-x-2">
+                  <RadioGroupItem value="cup" id="cup-in" />
+                  <Label htmlFor="cup-in" className="cursor-pointer">
+                    Cup
+                  </Label>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <RadioGroupItem value="takeaway" id="cup-takeaway" />
+                  <Label htmlFor="cup-takeaway" className="cursor-pointer">
+                    Takeaway Cup
+                  </Label>
+                </div>
+              </RadioGroup>
 
+              {cupType === "takeaway" && (
+                <div className="mt-3 pl-6">
+                  <Label className="mb-2 block">Takeaway Size</Label>
+                  <RadioGroup
+                    value={takeawaySize}
+                    onValueChange={(v: "regular" | "large") => setTakeawaySize(v)}
+                  >
+                    <div className="flex items-center space-x-2">
+                      <RadioGroupItem value="regular" id="size-regular" />
+                      <Label htmlFor="size-regular" className="cursor-pointer">
+                        Regular
+                      </Label>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <RadioGroupItem value="large" id="size-large" />
+                      <Label htmlFor="size-large" className="cursor-pointer">
+                        Large
+                      </Label>
+                    </div>
+                  </RadioGroup>
+                </div>
+              )}
+            </div>
 
             {/* Delivery */}
             <div>
