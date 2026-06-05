@@ -352,7 +352,7 @@ const InHouseCoffee = () => {
             <Button variant="outline" onClick={() => setSelectedCoffee(null)}>
               Cancel
             </Button>
-            <Button onClick={handleSave}>Save Order</Button>
+            <Button onClick={handleSave} disabled={saving}>{saving ? "Saving…" : "Save Order"}</Button>
           </DialogFooter>
         </DialogContent>
       </Dialog>
