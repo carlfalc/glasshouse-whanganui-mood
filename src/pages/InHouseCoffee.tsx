@@ -82,12 +82,26 @@ const InHouseCoffee = () => {
     setMilk("Full Cream");
     setDecaf(false);
     setDelivery("room");
+    setCupType("");
+    setTakeawaySize("");
   };
 
   const handleSave = () => {
+    if (!cupType) {
+      toast({ title: "Please choose a Cup or Takeaway Cup", variant: "destructive" });
+      return;
+    }
+    if (cupType === "takeaway" && !takeawaySize) {
+      toast({ title: "Please select Regular or Large", variant: "destructive" });
+      return;
+    }
+    const cupLabel =
+      cupType === "takeaway"
+        ? `Takeaway Cup (${takeawaySize === "regular" ? "Regular" : "Large"})`
+        : "Cup";
     toast({
       title: "Order received",
-      description: `${decaf ? "Decaf " : ""}${selectedCoffee} for ${name} — Room/Unit ${accomNumber}. ${
+      description: `${decaf ? "Decaf " : ""}${selectedCoffee} for ${name} — Room/Unit ${accomNumber}. ${cupLabel}. ${
         delivery === "room" ? "Room/Unit delivery." : "Pick up from Glass House counter."
       }`,
     });
