@@ -311,6 +311,11 @@ const InHouseCoffee = () => {
             </div>
           </div>
 
+          <p className="text-sm text-muted-foreground border-t border-border pt-4">
+            This will be charged to your room {accomNumber}.
+          </p>
+
+
           <DialogFooter>
             <Button variant="outline" onClick={() => setSelectedCoffee(null)}>
               Cancel
