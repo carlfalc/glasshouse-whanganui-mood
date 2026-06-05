@@ -23,7 +23,7 @@ const About = () => (
             Glasshouse began as a simple idea: a refined dining room in the centre of Whanganui, with an airy light filled room that connects to dining and drinks outdoors. Our Glasshouse is dedicated to the produce around the river, the coast, and the country around it.
           </p>
           <p>
-            The dining room is intentionally small. The team is intentionally close. Our menus shift with the seasons, as long as it always brings together our travellers and our community.
+            The dining room is intentionally small. The team is intentionally close. Our menus shift with the seasons, as long as we can help bring together our travellers and our community.
           </p>
           <p>
             We have brought together some of NZ and worlds talented chefs, youth olympic bronze medalist, Monin NZ 2026 mixologist champion and a 'coffee nerd'. We hope you'll join us chilling not with fine dining, just a place we can share for everyone.
