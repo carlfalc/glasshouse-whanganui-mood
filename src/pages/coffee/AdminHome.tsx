@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { AdminGuard } from "@/components/admin/AdminGuard";
 import { AdminShell } from "@/components/admin/AdminShell";
-import { ClipboardList, Settings } from "lucide-react";
+import { ClipboardList, History, Settings } from "lucide-react";
 
 export default function AdminHome() {
   return (
