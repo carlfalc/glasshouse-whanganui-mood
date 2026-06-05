@@ -18,6 +18,7 @@ import NotFound from "./pages/NotFound.tsx";
 import AdminLogin from "./pages/coffee/AdminLogin.tsx";
 import AdminHome from "./pages/coffee/AdminHome.tsx";
 import AdminOrders from "./pages/coffee/AdminOrders.tsx";
+import AdminHistory from "./pages/coffee/AdminHistory.tsx";
 import AdminSettings from "./pages/coffee/AdminSettings.tsx";
 
 const queryClient = new QueryClient();
