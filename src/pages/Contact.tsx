@@ -19,23 +19,25 @@ const Contact = () => {
             <div>
               <h2 className="text-[11px] uppercase tracked text-brass mb-4">Visit</h2>
               <p className="text-cream/80 leading-relaxed">
-                [ADDRESS — TO ADD]<br />
+                379 Victoria Avenue<br />
+                The Avenue Hotel<br />
                 Whanganui, New Zealand
               </p>
             </div>
             <div>
               <h2 className="text-[11px] uppercase tracked text-brass mb-4">Reservations</h2>
               <p className="text-cream/80">
-                <a href="tel:0062424177" className="hover:text-brass">06 242 4177</a><br />
-                <span className="text-cream/60">[email — to add]</span>
+                <a href="tel:062424177" className="hover:text-brass">06 242 4177</a><br />
+                <span className="text-cream/60">hello@glasshousewhanganui.nz</span>
               </p>
             </div>
             <div>
               <h2 className="text-[11px] uppercase tracked text-brass mb-4">Hours</h2>
-              <p className="text-cream/80 leading-relaxed">
-                [OPENING HOURS — TO ADD]<br />
-                Tue – Sat · Dinner from 5.30pm
-              </p>
+              <div className="text-cream/80 leading-relaxed space-y-1">
+                <p>Mon – Thursday · Dinner from 4pm</p>
+                <p>Friday to Saturday · Brunch & Lunch then Dinner from 10am to Late</p>
+                <p>Sun · Brunch & Lunch from 10am, Dinner 5 – 8pm</p>
+              </div>
             </div>
             <div>
               <h2 className="text-[11px] uppercase tracked text-brass mb-4">Follow</h2>
