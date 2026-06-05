@@ -36,6 +36,15 @@ const OrderCoffee = () => {
               No — Coming Soon
             </Button>
           </div>
+
+          <div className="mt-24 text-center">
+            <button
+              onClick={() => navigate("/coffee/admin/login")}
+              className="text-[11px] uppercase tracked text-cream/40 hover:text-brass transition-colors"
+            >
+              Admin
+            </button>
+          </div>
         </div>
       </section>
     </Layout>
