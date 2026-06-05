@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { AdminGuard } from "@/components/admin/AdminGuard";
 import { AdminShell } from "@/components/admin/AdminShell";
-import { ClipboardList, Settings } from "lucide-react";
+import { ClipboardList, History, Settings } from "lucide-react";
 
 export default function AdminHome() {
   return (
@@ -15,6 +15,14 @@ export default function AdminHome() {
             <ClipboardList className="w-8 h-8 text-[hsl(25_45%_25%)] mb-4" />
             <h2 className="text-xl font-semibold text-slate-900 mb-1">Orders</h2>
             <p className="text-sm text-slate-500">View and manage incoming coffee orders</p>
+          </Link>
+          <Link
+            to="/coffee/admin/history"
+            className="group bg-white rounded-xl border border-slate-200 p-8 hover:border-[hsl(25_45%_25%)] hover:shadow-md transition"
+          >
+            <History className="w-8 h-8 text-[hsl(25_45%_25%)] mb-4" />
+            <h2 className="text-xl font-semibold text-slate-900 mb-1">Coffee History</h2>
+            <p className="text-sm text-slate-500">View completed coffee orders</p>
           </Link>
           <Link
             to="/coffee/admin/settings"

@@ -43,6 +43,7 @@ function OrdersContent() {
     const { data, error } = await supabase
       .from("coffee_orders")
       .select("*")
+      .neq("status", "completed")
       .order("created_at", { ascending: false })
       .limit(200);
     if (error) {
