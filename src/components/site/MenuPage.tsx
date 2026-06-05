@@ -10,12 +10,13 @@ interface Props {
   descriptor: string;
   sections: MenuSection[];
   metaDescription: string;
+  eyebrow?: string;
 }
 
-const MenuPage = ({ title, descriptor, sections, metaDescription }: Props) => (
+const MenuPage = ({ title, descriptor, sections, metaDescription, eyebrow = "[PLACEHOLDER MENU ITEMS]" }: Props) => (
   <Layout title={`${title} — Glass House Whanganui`} description={metaDescription}>
     <section className="pt-40 pb-12 text-center container-narrow">
-      <p className="text-[11px] uppercase tracked text-brass mb-6">[PLACEHOLDER MENU ITEMS]</p>
+      <p className="text-[11px] uppercase tracked text-brass mb-6">{eyebrow || "\u200b"}</p>
       <h1 className="font-serif text-5xl md:text-6xl text-cream">{title}</h1>
       <p className="mt-6 text-cream/70 text-sm md:text-base max-w-xl mx-auto">{descriptor}</p>
       <div className="w-12 h-px bg-brass mx-auto mt-10" />
