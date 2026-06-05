@@ -62,6 +62,8 @@ const InHouseCoffee = () => {
   const [milk, setMilk] = useState("Full Cream");
   const [decaf, setDecaf] = useState(false);
   const [delivery, setDelivery] = useState<"room" | "counter">("room");
+  const [cupType, setCupType] = useState<"cup" | "takeaway" | "">("");
+  const [takeawaySize, setTakeawaySize] = useState<"regular" | "large" | "">("");
 
   const openCoffee = (coffee: string) => {
     if (!accomNumber) {
