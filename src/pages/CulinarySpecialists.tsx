@@ -119,7 +119,7 @@ const SectionHeading = ({ children }: { children: React.ReactNode }) => (
   </h2>
 );
 
-const OurPeople = () => (
+const CulinarySpecialists = () => (
   <Layout
     title="Culinary Specialists — Glass House Whanganui"
     description="Meet the internationally trained chefs, award-winning bar talent and certified leaders behind Glass House at The Avenue Hotel, Whanganui."
@@ -235,4 +235,4 @@ const OurPeople = () => (
   </Layout>
 );
 
-export default OurPeople;
+export default CulinarySpecialists;
