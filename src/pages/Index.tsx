@@ -7,7 +7,7 @@ import heroInterior from "@/assets/hero-interior.jpg";
 import heroWine from "@/assets/hero-wine.jpg";
 import menuBrunch from "@/assets/menu-brunch.jpg";
 import aboutHero from "@/assets/about-hero.jpg";
-import vouchersHero from "@/assets/vouchers-hero.jpg";
+import culinarySpecialistsTile from "@/assets/culinary-specialists-tile.jpg";
 
 const slides = [heroGlasshouse, heroWine];
 const slideDuration = 15;
@@ -67,7 +67,7 @@ const Index = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
             <TileLink to="/menus" image={menuBrunch} label="Menus" />
             <TileLink to="/our-people" image={aboutHero} label="Our People" />
-            <TileLink to="/vouchers" image={vouchersHero} label="Vouchers" />
+            <TileLink to="/culinary-specialists" image={culinarySpecialistsTile} label="Culinary Specialists" />
           </div>
         </div>
       </section>
