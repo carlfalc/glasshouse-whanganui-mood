@@ -177,6 +177,20 @@ const OurPeople = () => (
           <Credential key={c.title} {...c} />
         ))}
       </ul>
+      <Dialog>
+        <DialogTrigger asChild>
+          <button className="inline-block mt-6 text-[11px] uppercase tracked text-brass border-b border-brass pb-1 hover:text-cream transition-colors">
+            View the announcement
+          </button>
+        </DialogTrigger>
+        <DialogContent className="max-w-2xl p-0 overflow-hidden bg-transparent border-0">
+          <img
+            src={moninChampion.url}
+            alt="Sandesh Thapa named MONIN Cup 2026 New Zealand Champion"
+            className="w-full h-auto rounded-lg"
+          />
+        </DialogContent>
+      </Dialog>
     </section>
 
     <section className="container-narrow pb-20 max-w-3xl mx-auto">
