@@ -173,24 +173,28 @@ const OurPeople = () => (
     <section className="container-narrow pb-20 max-w-3xl mx-auto">
       <SectionHeading>Front of House &amp; Bar — Award-Winning Talent</SectionHeading>
       <ul className="space-y-8">
-        {fohCredentials.map((c) => (
-          <Credential key={c.title} {...c} />
+        {fohCredentials.map((c, i) => (
+          <li key={c.title}>
+            <Credential {...c} />
+            {i === 0 && (
+              <Dialog>
+                <DialogTrigger asChild>
+                  <button className="inline-block ml-8 mt-3 text-[11px] uppercase tracked text-brass border-b border-brass pb-1 hover:text-cream transition-colors">
+                    View the announcement
+                  </button>
+                </DialogTrigger>
+                <DialogContent className="max-w-2xl p-0 overflow-hidden bg-transparent border-0">
+                  <img
+                    src={moninChampion.url}
+                    alt="Sandesh Thapa named MONIN Cup 2026 New Zealand Champion"
+                    className="w-full h-auto rounded-lg"
+                  />
+                </DialogContent>
+              </Dialog>
+            )}
+          </li>
         ))}
       </ul>
-      <Dialog>
-        <DialogTrigger asChild>
-          <button className="inline-block mt-6 text-[11px] uppercase tracked text-brass border-b border-brass pb-1 hover:text-cream transition-colors">
-            View the announcement
-          </button>
-        </DialogTrigger>
-        <DialogContent className="max-w-2xl p-0 overflow-hidden bg-transparent border-0">
-          <img
-            src={moninChampion.url}
-            alt="Sandesh Thapa named MONIN Cup 2026 New Zealand Champion"
-            className="w-full h-auto rounded-lg"
-          />
-        </DialogContent>
-      </Dialog>
     </section>
 
     <section className="container-narrow pb-20 max-w-3xl mx-auto">
