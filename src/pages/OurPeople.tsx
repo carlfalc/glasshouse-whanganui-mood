@@ -158,6 +158,14 @@ const OurPeople = () => (
         <span className="text-cream">The Telegraph India</span>, recognised as a young chef shining
         on the international stage at the Young Chef Olympiad. Her story is well worth a read.
       </p>
+      <a
+        href="https://www.telegraphindia.com/my-kolkata/news/twenty-year-old-chef-from-kolkata-shines-in-international-young-chef-olympiad/cid/1915045"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-block mt-4 text-[11px] uppercase tracked text-brass border-b border-brass pb-1 hover:text-cream transition-colors"
+      >
+        Read her story
+      </a>
     </section>
 
     <section className="container-narrow pb-20 max-w-3xl mx-auto">
