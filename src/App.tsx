@@ -10,6 +10,7 @@ import Dinner from "./pages/Dinner.tsx";
 import RoomService from "./pages/RoomService.tsx";
 import About from "./pages/About.tsx";
 import OurPeople from "./pages/OurPeople.tsx";
+import CulinarySpecialists from "./pages/CulinarySpecialists.tsx";
 import Vouchers from "./pages/Vouchers.tsx";
 import OrderCoffee from "./pages/OrderCoffee.tsx";
 import InHouseCoffee from "./pages/InHouseCoffee.tsx";
@@ -37,6 +38,7 @@ const App = () => (
           <Route path="/menus/room-service" element={<RoomService />} />
           <Route path="/about" element={<About />} />
           <Route path="/our-people" element={<OurPeople />} />
+          <Route path="/culinary-specialists" element={<CulinarySpecialists />} />
           <Route path="/vouchers" element={<Vouchers />} />
           <Route path="/order-coffee" element={<OrderCoffee />} />
           <Route path="/order-coffee/in-house" element={<InHouseCoffee />} />
