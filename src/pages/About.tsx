@@ -26,7 +26,7 @@ const About = () => (
             The dining room is intentionally small. The team is intentionally close. Our menu's shift with the seasons, like the travellers who explore our city, that come and go.
           </p>
           <p>
-            We have brought together some of NZ & the worlds talented chefs, a youth olympic bronze medalist, NZ's 2026 mixologist champion and a 'coffee nerd'. This is not fine dining, <em className="italic">'its a small place with a quiet ambition'</em> that we can all share no matter who we are.
+            We have brought together some of NZ & the worlds talented chefs, a youth olympic bronze medalist, NZ's 2026 Monin Mixologist Champion and a 'coffee nerd'. This is not fine dining, <em className="italic">'its a small place with a quiet ambition'</em> that we can all share no matter who we are.
           </p>
         </div>
       </div>
