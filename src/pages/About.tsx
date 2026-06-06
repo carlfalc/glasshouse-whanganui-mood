@@ -1,6 +1,6 @@
 import Layout from "@/components/site/Layout";
 import aboutHero from "@/assets/about-hero.jpg";
-import aboutClosing from "@/assets/about-closing.jpg";
+
 
 const About = () => (
   <Layout title="About — Glass House Whanganui" description="The story of Glass House, a fine-dining restaurant in Whanganui, New Zealand.">
