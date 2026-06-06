@@ -1,9 +1,34 @@
 import Layout from "@/components/site/Layout";
 import { useState } from "react";
 import { Instagram, Facebook } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
+import { toast } from "sonner";
 
 const Contact = () => {
   const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [form, setForm] = useState({ name: "", email: "", phone: "", message: "" });
+
+  const handleChange = (id: string, value: string) =>
+    setForm((prev) => ({ ...prev, [id]: value }));
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setSending(true);
+    try {
+      const { error } = await supabase.functions.invoke("send-contact-email", {
+        body: form,
+      });
+      if (error) throw error;
+      toast.success("Thanks for thinking of us — we'll be in contact as soon as possible.");
+      setSubmitted(true);
+    } catch (err) {
+      console.error(err);
+      toast.error("Something went wrong. Please try again or call us.");
+    } finally {
+      setSending(false);
+    }
+  };
 
   return (
     <Layout title="Contact — Glass House Whanganui" description="Contact Glass House restaurant in Whanganui, New Zealand. Phone 06 242 4177.">
