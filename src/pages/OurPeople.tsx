@@ -154,7 +154,7 @@ const OurPeople = () => (
     <section className="container-narrow pb-20 max-w-3xl mx-auto">
       <SectionHeading>Featured — Our French-Trained Sous Chef</SectionHeading>
       <p className="text-cream/75 leading-relaxed">
-        Nandini, one of our incoming Sous Chefs, has had her culinary journey featured in{" "}
+        Naureen, one of our incoming Sous Chefs, has had her culinary journey featured in{" "}
         <span className="text-cream">The Telegraph India</span>, recognised as a young chef shining
         on the international stage at the Young Chef Olympiad. Her story is well worth a read.
       </p>
