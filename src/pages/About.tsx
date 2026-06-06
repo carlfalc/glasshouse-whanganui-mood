@@ -40,10 +40,6 @@ const About = () => (
         <p className="mt-8 text-[11px] uppercase tracked text-brass">— Anthony Bourdain</p>
       </div>
     </section>
-
-    <section className="relative h-[70vh] w-full overflow-hidden">
-      <img src={aboutClosing} alt="A candlelit table set at Glass House" className="absolute inset-0 w-full h-full object-cover" loading="lazy" />
-    </section>
   </Layout>
 );
 
