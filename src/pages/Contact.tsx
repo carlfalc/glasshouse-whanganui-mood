@@ -74,13 +74,13 @@ const Contact = () => {
           </div>
 
           <form
-            onSubmit={(e) => { e.preventDefault(); setSubmitted(true); }}
+            onSubmit={handleSubmit}
             className="space-y-6"
           >
             {submitted ? (
               <div className="border border-brass p-10 text-center">
-                <p className="font-serif text-2xl text-cream">Thank you.</p>
-                <p className="text-cream/70 text-sm mt-3">We'll be in touch shortly.</p>
+                <p className="font-serif text-2xl text-cream">Thanks for thinking of us.</p>
+                <p className="text-cream/70 text-sm mt-3">We'll be in contact as soon as possible.</p>
               </div>
             ) : (
               <>
