@@ -97,6 +97,8 @@ const Contact = () => {
                       id={f.id}
                       type={f.type}
                       required
+                      value={(form as Record<string, string>)[f.id]}
+                      onChange={(e) => handleChange(f.id, e.target.value)}
                       className="w-full bg-transparent border-b border-border focus:border-brass outline-none py-3 text-cream"
                     />
                   </div>
@@ -109,14 +111,17 @@ const Contact = () => {
                     id="message"
                     rows={4}
                     required
+                    value={form.message}
+                    onChange={(e) => handleChange("message", e.target.value)}
                     className="w-full bg-transparent border-b border-border focus:border-brass outline-none py-3 text-cream resize-none"
                   />
                 </div>
                 <button
                   type="submit"
-                  className="text-[11px] uppercase tracked px-7 py-4 bg-brass text-charcoal hover:bg-brass/90 transition-colors"
+                  disabled={sending}
+                  className="text-[11px] uppercase tracked px-7 py-4 bg-brass text-charcoal hover:bg-brass/90 transition-colors disabled:opacity-50"
                 >
-                  Send
+                  {sending ? "Sending…" : "Send"}
                 </button>
               </>
             )}
