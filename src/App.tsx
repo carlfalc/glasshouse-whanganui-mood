@@ -10,6 +10,7 @@ import Dinner from "./pages/Dinner.tsx";
 import RoomService from "./pages/RoomService.tsx";
 import About from "./pages/About.tsx";
 import OurPeople from "./pages/OurPeople.tsx";
+import CulinarySpecialists from "./pages/CulinarySpecialists.tsx";
 import Vouchers from "./pages/Vouchers.tsx";
 import OrderCoffee from "./pages/OrderCoffee.tsx";
 import InHouseCoffee from "./pages/InHouseCoffee.tsx";
