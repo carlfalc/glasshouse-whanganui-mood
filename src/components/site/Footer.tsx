@@ -45,7 +45,7 @@ const Footer = () => {
 
       <div className="border-t border-border">
         <div className="container-narrow py-6 flex flex-col md:flex-row justify-between gap-2 text-[11px] uppercase tracked text-cream/50">
-          <span>© ​ Whanganui</span>
+          <span>©CARL  ​GLASSHOUSE - WHANGANUI</span>
           <span>Creative New Zealand Dining.</span>
         </div>
       </div>
