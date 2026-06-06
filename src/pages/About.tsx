@@ -1,6 +1,6 @@
 import Layout from "@/components/site/Layout";
 import aboutHero from "@/assets/about-hero.jpg";
-import aboutClosing from "@/assets/about-closing.jpg";
+
 
 const About = () => (
   <Layout title="About — Glass House Whanganui" description="The story of Glass House, a fine-dining restaurant in Whanganui, New Zealand.">
@@ -39,10 +39,6 @@ const About = () => (
         </p>
         <p className="mt-8 text-[11px] uppercase tracked text-brass">— Anthony Bourdain</p>
       </div>
-    </section>
-
-    <section className="relative h-[70vh] w-full overflow-hidden">
-      <img src={aboutClosing} alt="A candlelit table set at Glass House" className="absolute inset-0 w-full h-full object-cover" loading="lazy" />
     </section>
   </Layout>
 );
