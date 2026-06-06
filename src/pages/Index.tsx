@@ -30,6 +30,12 @@ const Index = () => {
           />
         ))}
         
+        <div className="absolute top-24 md:top-28 left-0 right-0 z-10 container-narrow fade-up">
+          <p className="text-cream text-[11px] md:text-sm uppercase tracked max-w-md">
+            Opening end of June / start of July — click 'BOOK' for earlybird bookings
+          </p>
+        </div>
+
         <div className="relative z-10 h-full container-narrow flex flex-col justify-end pb-10 md:pb-14">
           <h1 className="font-serif text-cream md:text-5xl lg:text-6xl tracked-tight uppercase fade-up text-lg">
             WHERE THE GARDEN COMES INSIDE&nbsp;
