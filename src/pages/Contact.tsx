@@ -28,7 +28,7 @@ const Contact = () => {
               <h2 className="text-[11px] uppercase tracked text-brass mb-4">Reservations</h2>
               <p className="text-cream/80">
                 <a href="tel:062424177" className="hover:text-brass">06 242 4177</a><br />
-                <span className="text-cream/60">[email — to add]</span>
+                <a href="mailto:Info@glass-house.co.nz" className="hover:text-brass">Info@glass-house.co.nz</a>
               </p>
             </div>
             <div>
