@@ -190,6 +190,15 @@ const DinnerMenuDialog = ({ open, onOpenChange }: Props) => {
     }
   };
 
+  const handleDownload = () => {
+    const a = document.createElement("a");
+    a.href = menuPdf.url;
+    a.download = menuPdf.original_filename || "Glasshouse_Dinner_Menu.pdf";
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+  };
+
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="max-w-3xl max-h-[90vh] overflow-y-auto bg-background border-border p-0">
