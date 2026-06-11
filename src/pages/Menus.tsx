@@ -28,6 +28,15 @@ const Menus = () => {
           <TileLink to="/menus" image={menuRoom} label="Room Service" cornerText="Hotels King Room" onClick={(e) => { e.preventDefault(); setRoomOpen(true); }} />
         </div>
       </section>
+      <section className="container-narrow pb-32 text-center">
+        <p className="font-serif italic text-lg md:text-xl text-cream/80 leading-relaxed">
+          Have a special event, function or birthday? Please email us at{" "}
+          <a href="mailto:info@glass-house.co.nz" className="text-brass hover:underline">
+            info@glass-house.co.nz
+          </a>{" "}
+          to see if we can help.
+        </p>
+      </section>
       <DinnerMenuDialog open={dinnerOpen} onOpenChange={setDinnerOpen} />
       <RoomServiceMenuDialog open={roomOpen} onOpenChange={setRoomOpen} />
       <BrunchLunchMenuDialog open={brunchOpen} onOpenChange={setBrunchOpen} />
