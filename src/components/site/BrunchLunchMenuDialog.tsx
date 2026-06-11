@@ -143,6 +143,8 @@ interface Props {
 
 const BrunchLunchMenuDialog = ({ open, onOpenChange }: Props) => {
   const [sharing, setSharing] = useState(false);
+  const [pageSize, setPageSize] = useState<PageSize>("A4");
+  const [fitToPage, setFitToPage] = useState(true);
 
   const handlePrint = () => {
     const w = window.open("", "_blank", "width=800,height=900");
@@ -150,7 +152,7 @@ const BrunchLunchMenuDialog = ({ open, onOpenChange }: Props) => {
       toast.error("Please allow pop-ups to print the menu.");
       return;
     }
-    w.document.write(buildPrintHtml());
+    w.document.write(buildPrintHtml({ pageSize, fitToPage }));
     w.document.close();
     w.focus();
     setTimeout(() => w.print(), 300);
