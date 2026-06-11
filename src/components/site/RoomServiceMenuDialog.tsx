@@ -22,6 +22,7 @@ const sections: Section[] = [
     title: "Small Shares",
     items: [
       { name: "Fries", price: "$10", description: "House seasoning, confit garlic and citrus aioli, tomato sauce", tags: "GF, DF, VG" },
+      { name: "Homemade cornbread", price: "$11", description: "Served with burnt butter", tags: "GF, V" },
       { name: "Fried chicken bites", price: "$19", description: "Buttermilk fried chicken, pickles, citrus and garlic aioli. Buffalo hot sauce available", tags: "GF" },
       { name: "Horopito salt and pepper squid", price: "$20", description: "Fried squid fillets, horopito togarashi seasoning, citrus and confit garlic aioli, pecorino and rocket salad", tags: "GF, DFA" },
       { name: "Miso pork belly bites", price: "$20", description: "12-hour slow cooked pork belly, miso caramel, pickled apple, sesame and Sichuan seasoning", tags: "GF, DF" },
