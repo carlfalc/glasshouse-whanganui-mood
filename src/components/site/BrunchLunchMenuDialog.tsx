@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Printer, Share2, Download } from "lucide-react";
+import { Printer, Share2, Download, Maximize2 } from "lucide-react";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import { toast } from "sonner";
 import menuPdf from "@/assets/Glasshouse_Brunch_Lunch_Menu.pdf.asset.json";
