@@ -22,6 +22,7 @@ const sections: Section[] = [
     title: "Small Shares",
     items: [
       { name: "Fries", price: "$10", description: "House seasoning, confit garlic and citrus aioli, tomato sauce", tags: "GF, DF, VG" },
+      { name: "Homemade cornbread", price: "$11", description: "Served with burnt butter", tags: "GF, V" },
       { name: "Fried chicken bites", price: "$19", description: "Buttermilk fried chicken, pickles, citrus and garlic aioli. Buffalo hot sauce available", tags: "GF" },
       { name: "Horopito salt and pepper squid", price: "$20", description: "Fried squid fillets, horopito togarashi seasoning, citrus and confit garlic aioli, pecorino and rocket salad", tags: "GF, DFA" },
       { name: "Miso pork belly bites", price: "$20", description: "12-hour slow cooked pork belly, miso caramel, pickled apple, sesame and Sichuan seasoning", tags: "GF, DF" },
@@ -64,6 +65,17 @@ const sections: Section[] = [
       { name: "Rich dark chocolate crémeux", price: "$20", description: "Honeycomb, raspberry, white chocolate", tags: "GF, chocolate may contain traces of nuts" },
       { name: "Basque cheesecake", price: "$19", description: "Berry and bayleaf compote, lemon curd, chantilly cream", tags: "GF" },
       { name: "Petite fours", price: "$20", description: "A selection of 4 small desserts, some homemade and others made by Sweet Street Gluten Free Bakery", tags: "GF, contain nuts" },
+    ],
+  },
+  {
+    title: "Kids Menu",
+    items: [
+      { name: "Fish and chips", price: "$10", description: "Crumbed hoki fish, fries and tomato sauce", tags: "GF, DF" },
+      { name: "Mini cheeseburger", price: "$10", description: "Beef slider, cheese, tomato sauce, fries and tomato sauce", tags: "GFA, DFA" },
+      { name: "Mini chicken burger", price: "$10", description: "Fried chicken, lettuce, cheese, aioli, fries and tomato sauce", tags: "GFA" },
+      { name: "Gnocchi", price: "$10", description: "Gnocchi, cream sauce, cheese", tags: "GF, V" },
+      { name: "Chicken bites", price: "$10", description: "Buttermilk chicken bites, fries and tomato sauce", tags: "GF" },
+      { name: "Ice cream", price: "$9", description: "Choice of chocolate sauce, caramel sauce, strawberry sauce", tags: "GF, V" },
     ],
   },
   {
