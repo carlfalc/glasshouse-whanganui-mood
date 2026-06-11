@@ -194,6 +194,12 @@ const BrunchLunchMenuDialog = ({ open, onOpenChange }: Props) => {
             >
               <Share2 className="h-4 w-4" /> Share
             </button>
+            <button
+              onClick={handleDownload}
+              className="inline-flex items-center gap-2 text-[11px] uppercase tracked text-cream/80 hover:text-brass transition-colors"
+            >
+              <Download className="h-4 w-4" /> Download
+            </button>
           </div>
         </div>
 
