@@ -32,7 +32,7 @@ const Index = () => {
         
         <div className="absolute top-24 md:top-28 left-0 right-0 z-10 container-narrow fade-up">
           <p className="text-cream text-[11px] md:text-sm uppercase tracked max-w-md">
-            Opening end of June / start of July — click 'BOOK' for earlybird bookings
+            Early bird reservations are only being taken by our booking engine — we open 3 July. Don't miss out, book now
           </p>
         </div>
 
