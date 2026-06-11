@@ -78,6 +78,7 @@ const sections: Section[] = [
       { name: "Ice cream", price: "$9", description: "Choice of chocolate sauce, caramel sauce, strawberry sauce", tags: "GF, V" },
     ],
   },
+  {
     title: "Breakfast Buffet",
     description:
       "$35 per person · Monday 7:00am–10:00am · Tuesday to Friday 6:45am–10:00am · Saturday and Sunday 7:30am–10:00am",
