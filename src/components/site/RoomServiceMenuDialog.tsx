@@ -68,6 +68,16 @@ const sections: Section[] = [
     ],
   },
   {
+    title: "Kids Menu",
+    items: [
+      { name: "Fish and chips", price: "$10", description: "Crumbed hoki fish, fries and tomato sauce", tags: "GF, DF" },
+      { name: "Mini cheeseburger", price: "$10", description: "Beef slider, cheese, tomato sauce, fries and tomato sauce", tags: "GFA, DFA" },
+      { name: "Mini chicken burger", price: "$10", description: "Fried chicken, lettuce, cheese, aioli, fries and tomato sauce", tags: "GFA" },
+      { name: "Gnocchi", price: "$10", description: "Gnocchi, cream sauce, cheese", tags: "GF, V" },
+      { name: "Chicken bites", price: "$10", description: "Buttermilk chicken bites, fries and tomato sauce", tags: "GF" },
+      { name: "Ice cream", price: "$9", description: "Choice of chocolate sauce, caramel sauce, strawberry sauce", tags: "GF, V" },
+    ],
+  },
     title: "Breakfast Buffet",
     description:
       "$35 per person · Monday 7:00am–10:00am · Tuesday to Friday 6:45am–10:00am · Saturday and Sunday 7:30am–10:00am",
