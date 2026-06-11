@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Printer, Share2 } from "lucide-react";
+import { Printer, Share2, Download } from "lucide-react";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import { toast } from "sonner";
 import menuPdf from "@/assets/Glasshouse_Dinner_Menu.pdf.asset.json";
@@ -190,6 +190,15 @@ const DinnerMenuDialog = ({ open, onOpenChange }: Props) => {
     }
   };
 
+  const handleDownload = () => {
+    const a = document.createElement("a");
+    a.href = menuPdf.url;
+    a.download = menuPdf.original_filename || "Glasshouse_Dinner_Menu.pdf";
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+  };
+
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="max-w-3xl max-h-[90vh] overflow-y-auto bg-background border-border p-0">
@@ -208,6 +217,12 @@ const DinnerMenuDialog = ({ open, onOpenChange }: Props) => {
               className="inline-flex items-center gap-2 text-[11px] uppercase tracked text-cream/80 hover:text-brass transition-colors"
             >
               <Share2 className="h-4 w-4" /> Share
+            </button>
+            <button
+              onClick={handleDownload}
+              className="inline-flex items-center gap-2 text-[11px] uppercase tracked text-cream/80 hover:text-brass transition-colors"
+            >
+              <Download className="h-4 w-4" /> Download
             </button>
           </div>
         </div>
