@@ -1,36 +1,20 @@
-## Problem
+# Hide Order Coffee from visitors
 
-The PDF "Culinary Specialists" content was pasted directly into `src/pages/OurPeople.tsx`, overwriting the original "Our People" team org-chart (staff names + photos). Both menu items ("Culinary Specialists" and "Our People") currently point to `/our-people`, so the team page is gone.
+Goal: keep the entire coffee ordering system live and reachable by direct URL, but remove it from anywhere a normal visitor would discover it — so the site can go live before coffee ordering opens.
 
-## Goal
+## What changes
 
-- Keep the current Culinary Specialists content, but serve it at `/culinary-specialists`.
-- Restore the original "Our People" team page (org-chart of staff names) at `/our-people`.
-- Point each menu item to its correct route.
+1. **Remove the "Order Coffee" link from the main navigation** (`src/components/site/Header.tsx`). It currently shows in both the desktop nav and the mobile menu. Removing the single `navItems` entry hides it in both places.
 
-## Changes
+2. **Leave everything else untouched:**
+   - All routes stay registered in `App.tsx` (`/order-coffee`, `/order-coffee/in-house`, and the `/coffee/admin/*` pages), so they remain fully functional via direct link.
+   - The Order Coffee pages, admin login, and backend stay live.
+   - The hidden "Admin" link lives on the Order Coffee page itself — since that page is no longer linked, you (the team) can still reach it by going directly to `/order-coffee`.
 
-1. **Create `src/pages/CulinarySpecialists.tsx`** — move the current content of `OurPeople.tsx` (the Kia ora letter, Kitchen Team credentials, French-Trained Sous Chef + Telegraph link, Front of House & Bar with the MONIN announcement popup, Global Footprint, Why This Matters) into this new file, renamed component `CulinarySpecialists`.
+## Result
 
-2. **Rebuild `src/pages/OurPeople.tsx`** as the original team org-chart layout:
-   - **Executive Chef** — Matthew Tressider, centered alone at top.
-   - **Sous Chefs** (rows of three) — Robbie Beint, Kumar Sanket, Naureen Shaik, Muhammad Rehan, Saroj Bhandari.
-   - **Breakfast Chef** — Nicola Wright, centered alone at bottom.
-   - Each member rendered as a card: portrait (`about-hero.jpg` placeholder, as before), name, role, and a placeholder bio line (bios to be added later).
-   - Same cream/brass styling, fonts, and `Layout` wrapper as the rest of the site.
+A visitor landing on the site sees: Home · Menus · Culinary Specialists · About · Our People · Contact — no Order Coffee. When you're ready to open ordering in a few weeks, I just add the nav link back.
 
-3. **`src/App.tsx`** — add a route `"/culinary-specialists"` → `CulinarySpecialists`, keep `"/our-people"` → `OurPeople`.
+## Technical detail
 
-4. **`src/components/site/Header.tsx`** — change the "Culinary Specialists" nav item `to` from `/our-people` to `/culinary-specialists`; leave "Our People" → `/our-people`.
-
-5. **Verify** other links: `Footer.tsx` ("Our People" → `/our-people`) and `Index.tsx` tile ("Our People" → `/our-people`) stay as-is and remain correct.
-
-## Notes
-
-- Original bios weren't finalized ("I'll add bios later"), so cards will use a short placeholder bio that's easy to replace.
-- Portraits reuse `about-hero.jpg` as in the original implementation; real headshots can be swapped in later.
-
-## Technical details
-
-- Routes registered in `src/App.tsx` via `react-router-dom`.
-- Team data as an array (`name`, `role`, `bio`) grouped/filtered by role for the three layout tiers; responsive grid `grid-cols-1 sm:grid-cols-2 lg:grid-cols-3` for Sous Chefs.
+Delete the `{ to: "/order-coffee", label: "Order Coffee" }` object from the `navItems` array in `Header.tsx`. No route or page deletions.
