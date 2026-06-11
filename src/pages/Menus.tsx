@@ -23,7 +23,7 @@ const Menus = () => {
           <TileLink to="/menus/brunch-lunch" image={menuBrunch} label="Brunch & Lunch" />
           <TileLink to="/menus" image={menuDinner} label="Dinner" onClick={(e) => { e.preventDefault(); setDinnerOpen(true); }} />
 
-          <TileLink to="/menus" image={menuRoom} label="Room Service" onClick={(e) => { e.preventDefault(); setRoomOpen(true); }} />
+          <TileLink to="/menus" image={menuRoom} label="Room Service" cornerText="Hotels King Room" onClick={(e) => { e.preventDefault(); setRoomOpen(true); }} />
         </div>
       </section>
       <DinnerMenuDialog open={dinnerOpen} onOpenChange={setDinnerOpen} />
