@@ -194,7 +194,24 @@ const BrunchLunchMenuDialog = ({ open, onOpenChange }: Props) => {
       <DialogContent className="max-w-3xl max-h-[90vh] overflow-y-auto bg-background border-border p-0">
         <div className="sticky top-0 z-10 flex items-center justify-between gap-4 bg-background/95 backdrop-blur border-b border-border px-6 py-4">
           <DialogTitle className="font-serif text-xl text-cream">Brunch &amp; Lunch</DialogTitle>
-          <div className="flex items-center gap-2 pr-8">
+          <div className="flex flex-wrap items-center gap-2 pr-8">
+            <select
+              value={pageSize}
+              onChange={(e) => setPageSize(e.target.value as PageSize)}
+              aria-label="Page size"
+              className="bg-background border border-border rounded text-[11px] uppercase tracked text-cream/80 px-2 py-1 hover:text-brass focus:outline-none"
+            >
+              <option value="A4">A4</option>
+              <option value="Letter">Letter</option>
+              <option value="Legal">Legal</option>
+            </select>
+            <button
+              onClick={() => setFitToPage((v) => !v)}
+              aria-pressed={fitToPage}
+              className={`inline-flex items-center gap-2 text-[11px] uppercase tracked transition-colors ${fitToPage ? "text-brass" : "text-cream/80 hover:text-brass"}`}
+            >
+              <Maximize2 className="h-4 w-4" /> Fit to page
+            </button>
             <button
               onClick={handlePrint}
               className="inline-flex items-center gap-2 text-[11px] uppercase tracked text-cream/80 hover:text-brass transition-colors"
