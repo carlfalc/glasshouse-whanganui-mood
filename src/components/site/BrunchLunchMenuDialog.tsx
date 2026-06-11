@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Printer, Share2, Download } from "lucide-react";
+import { Printer, Share2, Download, Maximize2 } from "lucide-react";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import { toast } from "sonner";
 import menuPdf from "@/assets/Glasshouse_Brunch_Lunch_Menu.pdf.asset.json";
@@ -86,7 +86,13 @@ const sections: Section[] = [
 const dietaryGuide =
   "Served from 10am. GF Gluten Free • GFA Gluten Free Available • DF Dairy Free • DFA Dairy Free Available • V Vegetarian • VG Vegan. Please advise your server of any allergies or dietary requirements.";
 
-const buildPrintHtml = () => {
+type PageSize = "A4" | "Letter" | "Legal";
+interface PrintOptions {
+  pageSize: PageSize;
+  fitToPage: boolean;
+}
+
+const buildPrintHtml = ({ pageSize, fitToPage }: PrintOptions) => {
   const sectionHtml = sections
     .map((sec) => {
       const itemsHtml = (sec.items ?? [])
@@ -104,19 +110,25 @@ const buildPrintHtml = () => {
     })
     .join("");
 
+  const fitCss = fitToPage
+    ? `html,body{height:auto;} body{zoom:.85;-webkit-print-color-adjust:exact;} .item{margin:10px 0;} h2{margin-top:22px;}`
+    : "";
+
   return `<!doctype html><html><head><meta charset="utf-8"><title>Glasshouse Brunch & Lunch Menu</title>
   <style>
+    @page{size:${pageSize} portrait;margin:${fitToPage ? "10mm" : "18mm"};}
     body{font-family:Georgia,'Times New Roman',serif;color:#1a1a1a;max-width:720px;margin:40px auto;padding:0 24px;}
     h1{text-align:center;letter-spacing:.3em;font-size:28px;text-transform:uppercase;}
-    h2{border-bottom:1px solid #999;padding-bottom:6px;margin-top:32px;font-size:14px;letter-spacing:.2em;text-transform:uppercase;}
+    h2{border-bottom:1px solid #999;padding-bottom:6px;margin-top:32px;font-size:14px;letter-spacing:.2em;text-transform:uppercase;break-after:avoid;}
     .secdesc{font-size:13px;color:#444;}
-    .item{margin:14px 0;}
+    .item{margin:14px 0;break-inside:avoid;}
     .row{display:flex;justify-content:space-between;align-items:baseline;}
     .name{font-size:17px;}
     .price{font-weight:bold;}
     .desc{font-size:13px;color:#444;margin:4px 0 0;}
     .tags{font-size:11px;color:#888;font-style:italic;margin:2px 0 0;}
     .guide{margin-top:40px;font-size:11px;text-align:center;color:#666;}
+    ${fitCss}
   </style></head><body>
   <h1>Brunch &amp; Lunch</h1>
   ${sectionHtml}
@@ -131,6 +143,8 @@ interface Props {
 
 const BrunchLunchMenuDialog = ({ open, onOpenChange }: Props) => {
   const [sharing, setSharing] = useState(false);
+  const [pageSize, setPageSize] = useState<PageSize>("A4");
+  const [fitToPage, setFitToPage] = useState(true);
 
   const handlePrint = () => {
     const w = window.open("", "_blank", "width=800,height=900");
@@ -138,7 +152,7 @@ const BrunchLunchMenuDialog = ({ open, onOpenChange }: Props) => {
       toast.error("Please allow pop-ups to print the menu.");
       return;
     }
-    w.document.write(buildPrintHtml());
+    w.document.write(buildPrintHtml({ pageSize, fitToPage }));
     w.document.close();
     w.focus();
     setTimeout(() => w.print(), 300);
@@ -180,7 +194,24 @@ const BrunchLunchMenuDialog = ({ open, onOpenChange }: Props) => {
       <DialogContent className="max-w-3xl max-h-[90vh] overflow-y-auto bg-background border-border p-0">
         <div className="sticky top-0 z-10 flex items-center justify-between gap-4 bg-background/95 backdrop-blur border-b border-border px-6 py-4">
           <DialogTitle className="font-serif text-xl text-cream">Brunch &amp; Lunch</DialogTitle>
-          <div className="flex items-center gap-2 pr-8">
+          <div className="flex flex-wrap items-center gap-2 pr-8">
+            <select
+              value={pageSize}
+              onChange={(e) => setPageSize(e.target.value as PageSize)}
+              aria-label="Page size"
+              className="bg-background border border-border rounded text-[11px] uppercase tracked text-cream/80 px-2 py-1 hover:text-brass focus:outline-none"
+            >
+              <option value="A4">A4</option>
+              <option value="Letter">Letter</option>
+              <option value="Legal">Legal</option>
+            </select>
+            <button
+              onClick={() => setFitToPage((v) => !v)}
+              aria-pressed={fitToPage}
+              className={`inline-flex items-center gap-2 text-[11px] uppercase tracked transition-colors ${fitToPage ? "text-brass" : "text-cream/80 hover:text-brass"}`}
+            >
+              <Maximize2 className="h-4 w-4" /> Fit to page
+            </button>
             <button
               onClick={handlePrint}
               className="inline-flex items-center gap-2 text-[11px] uppercase tracked text-cream/80 hover:text-brass transition-colors"
