@@ -86,7 +86,13 @@ const sections: Section[] = [
 const dietaryGuide =
   "Served from 10am. GF Gluten Free • GFA Gluten Free Available • DF Dairy Free • DFA Dairy Free Available • V Vegetarian • VG Vegan. Please advise your server of any allergies or dietary requirements.";
 
-const buildPrintHtml = () => {
+type PageSize = "A4" | "Letter" | "Legal";
+interface PrintOptions {
+  pageSize: PageSize;
+  fitToPage: boolean;
+}
+
+const buildPrintHtml = ({ pageSize, fitToPage }: PrintOptions) => {
   const sectionHtml = sections
     .map((sec) => {
       const itemsHtml = (sec.items ?? [])
@@ -104,19 +110,25 @@ const buildPrintHtml = () => {
     })
     .join("");
 
+  const fitCss = fitToPage
+    ? `html,body{height:auto;} body{zoom:.85;-webkit-print-color-adjust:exact;} .item{margin:10px 0;} h2{margin-top:22px;}`
+    : "";
+
   return `<!doctype html><html><head><meta charset="utf-8"><title>Glasshouse Brunch & Lunch Menu</title>
   <style>
+    @page{size:${pageSize} portrait;margin:${fitToPage ? "10mm" : "18mm"};}
     body{font-family:Georgia,'Times New Roman',serif;color:#1a1a1a;max-width:720px;margin:40px auto;padding:0 24px;}
     h1{text-align:center;letter-spacing:.3em;font-size:28px;text-transform:uppercase;}
-    h2{border-bottom:1px solid #999;padding-bottom:6px;margin-top:32px;font-size:14px;letter-spacing:.2em;text-transform:uppercase;}
+    h2{border-bottom:1px solid #999;padding-bottom:6px;margin-top:32px;font-size:14px;letter-spacing:.2em;text-transform:uppercase;break-after:avoid;}
     .secdesc{font-size:13px;color:#444;}
-    .item{margin:14px 0;}
+    .item{margin:14px 0;break-inside:avoid;}
     .row{display:flex;justify-content:space-between;align-items:baseline;}
     .name{font-size:17px;}
     .price{font-weight:bold;}
     .desc{font-size:13px;color:#444;margin:4px 0 0;}
     .tags{font-size:11px;color:#888;font-style:italic;margin:2px 0 0;}
     .guide{margin-top:40px;font-size:11px;text-align:center;color:#666;}
+    ${fitCss}
   </style></head><body>
   <h1>Brunch &amp; Lunch</h1>
   ${sectionHtml}
