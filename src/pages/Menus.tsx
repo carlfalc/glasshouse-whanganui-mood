@@ -20,7 +20,7 @@ const Menus = () => {
         <h1 className="font-serif text-5xl md:text-6xl text-cream">Menus</h1>
         <div className="w-12 h-px bg-brass mx-auto mt-8" />
       </section>
-      <section className="container-narrow pb-32">
+      <section className="container-narrow pb-16">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
           <TileLink to="/menus" image={menuBrunch} label="Brunch & Lunch" onClick={(e) => { e.preventDefault(); setBrunchOpen(true); }} />
           <TileLink to="/menus" image={menuDinner} label="Dinner" onClick={(e) => { e.preventDefault(); setDinnerOpen(true); }} />
