@@ -54,7 +54,7 @@ const groups: Group[] = [
         title: "Small Shares",
         items: [
           { name: "Market fish ceviche", price: "$20", description: "Fresh raw fish, tomato salsa, pickled chilli, lime, sesame infused oil", tags: "GF, DF" },
-          { name: "Tomato burrata salad", price: "$20", description: "Creamy burrata, burst roasted cherry tomatoes, homemade basil pesto, fresh basil and warm crusty bread", tags: "V, GFA, contains nuts" },
+          { name: "Tomato burrata salad", price: "$20", description: "Creamy burrata, burst roasted cherry tomatoes, homemade basil pesto, fresh basil and warm crusty bread", tags: "V, GFA" },
           { name: "Horopito salt and pepper squid", price: "$20", description: "Fried squid fillets, horopito togarashi seasoning, citrus and confit garlic aioli, pecorino and rocket salad", tags: "GF, DFA" },
           { name: "Miso pork belly bites", price: "$20", description: "12-hour slow cooked pork belly, miso caramel, pickled apple, sesame and Sichuan seasoning", tags: "GF, DF" },
           { name: "Chicken liver pâté", price: "$20", description: "Rich brandy chicken liver pâté, pickled cucumber, fresh tomato, Glasshouse crackers", tags: "GF" },
