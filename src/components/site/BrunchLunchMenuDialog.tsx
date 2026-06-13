@@ -38,7 +38,7 @@ const sections: Section[] = [
     ],
   },
   {
-    title: "Small Shares & Sides",
+    title: "Small Shares",
     items: [
       { name: "Fries", price: "$10", description: "House seasoning, confit garlic and citrus aioli, tomato sauce", tags: "GF, DF, VG" },
       { name: "Tomato burrata salad", price: "$20", description: "Creamy burrata, burst roasted cherry tomatoes, homemade basil pesto, fresh basil and warm crusty bread", tags: "V, GFA" },
