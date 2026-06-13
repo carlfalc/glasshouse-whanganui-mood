@@ -20,7 +20,7 @@ const sections: Section[] = [
   {
     title: "Breakfast",
     items: [
-      { name: "Eggs your way", price: "$18", description: "Poached, scrambled or fried eggs served on toasted sourdough, rye or gluten free bread" },
+      { name: "Eggs your way", price: "$15", description: "Poached, scrambled or fried eggs served on toasted sourdough, rye or gluten free bread" },
       { name: "Extras", description: "Streaky bacon $5 · Pork & fennel sausages $5 · Chimichurri mushrooms $5 · Homemade baked beans $5 · Rosti $5 · Grilled halloumi $6 · Fried tomato $4 · Wilted spinach $4 · Hollandaise $3", tags: "All sides GF" },
       { name: "Glasshouse breakfast", price: "$29", description: "Eggs your way on sourdough toast, bacon, sausage, rosti, grilled tomato, chimichurri mushrooms and hollandaise sauce", tags: "GFA" },
       { name: "Eggs Benedict", price: "$25", description: "With choice of bacon, wilted spinach and mushrooms, or smoked salmon. Poached eggs and hollandaise sauce on an English muffin", tags: "GFA" },
@@ -38,7 +38,7 @@ const sections: Section[] = [
     ],
   },
   {
-    title: "Small Shares & Sides",
+    title: "Small Shares",
     items: [
       { name: "Fries", price: "$10", description: "House seasoning, confit garlic and citrus aioli, tomato sauce", tags: "GF, DF, VG" },
       { name: "Tomato burrata salad", price: "$20", description: "Creamy burrata, burst roasted cherry tomatoes, homemade basil pesto, fresh basil and warm crusty bread", tags: "V, GFA" },
