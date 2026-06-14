@@ -1,5 +1,6 @@
 // Allows a signed-in coffee admin to update the shared staff PIN.
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2.45.0";
+import { hash as bcryptHash } from "https://esm.sh/bcryptjs@2.4.3";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
