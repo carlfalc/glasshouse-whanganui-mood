@@ -82,7 +82,7 @@ const Index = () => {
         <div className="container-narrow py-28 md:py-36 max-w-3xl text-center">
           <p className="text-[11px] uppercase tracked text-brass mb-8">​ · Whanganui</p>
           <p className="font-serif text-2xl md:text-3xl leading-snug">
-            A refined dining destination in the heart of Whanganui — a small room, a single team, and a quiet devotion to the produce of Aotearoa.
+            A refined dining destination in the heart of Whanganui — a light filled room & vibrant outside areas, a single team with and a quiet devotion to the produce of Aotearoa.
           </p>
         </div>
       </section>
