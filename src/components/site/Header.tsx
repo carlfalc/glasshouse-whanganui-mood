@@ -17,6 +17,7 @@ const Header = () => {
   const [open, setOpen] = useState(false);
   const location = useLocation();
   const isHome = location.pathname === "/";
+  const { lightImageActive } = useHeroTheme();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -30,6 +31,8 @@ const Header = () => {
   }, [location.pathname]);
 
   const transparent = isHome && !scrolled && !open;
+  // On the transparent home hero, darken nav text only while the lighter image 2 is showing
+  const darkText = transparent && lightImageActive;
 
   return (
     <header
