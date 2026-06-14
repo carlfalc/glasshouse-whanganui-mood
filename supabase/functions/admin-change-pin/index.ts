@@ -1,5 +1,6 @@
 // Allows a signed-in coffee admin to update the shared staff PIN.
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2.45.0";
+import { hash as bcryptHash } from "https://esm.sh/bcryptjs@2.4.3";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
@@ -71,17 +72,19 @@ Deno.serve(async (req) => {
     return json({ error: "Could not read current PIN" }, 500);
   }
 
+  const pinHash = await bcryptHash(pin, 10);
+
   if (existing) {
     const { error: updErr } = await admin
       .from("admin_pin_settings")
-      .update({ pin, updated_at: new Date().toISOString() })
+      .update({ pin: pinHash, updated_at: new Date().toISOString() })
       .eq("id", existing.id);
     if (updErr) {
       console.error("admin-change-pin: update failed", updErr);
       return json({ error: "Could not update PIN" }, 500);
     }
   } else {
-    const { error: insErr } = await admin.from("admin_pin_settings").insert({ pin });
+    const { error: insErr } = await admin.from("admin_pin_settings").insert({ pin: pinHash });
     if (insErr) {
       console.error("admin-change-pin: insert failed", insErr);
       return json({ error: "Could not save PIN" }, 500);
