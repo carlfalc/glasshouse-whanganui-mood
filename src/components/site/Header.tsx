@@ -83,7 +83,7 @@ const Header = () => {
           <button
             aria-label="Open menu"
             onClick={() => setOpen((v) => !v)}
-            className={`transition-colors duration-500 ${darkText ? "text-charcoal" : "text-cream"}`}
+            className={`transition-colors duration-500 ${darkText ? "text-brass" : "text-cream"}`}
           >
             {open ? <X size={24} /> : <Menu size={24} />}
           </button>
