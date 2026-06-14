@@ -58,7 +58,7 @@ const Header = () => {
               to={item.to}
               className={({ isActive }) =>
                 `text-[11px] uppercase tracked hover:text-brass transition-colors duration-500 ${
-                  darkText ? "text-brass" : "text-cream/85"
+                  darkText ? "text-charcoal" : "text-cream/85"
                 } ${isActive ? "!text-brass" : ""}`
               }
             >
