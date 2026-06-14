@@ -44,8 +44,8 @@ const Header = () => {
         <Link
           to="/"
           aria-label="Glass House home"
-          className={`font-serif text-2xl tracking-tight transition-colors duration-500 ${
-            darkText ? "text-brass" : "text-cream"
+          className={`font-serif text-2xl tracking-tight transition-colors duration-500 hover:text-brass ${
+            darkText ? "text-charcoal" : "text-cream"
           }`}
         >
           ​
