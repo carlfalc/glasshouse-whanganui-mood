@@ -1,6 +1,7 @@
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
+import { useHeroTheme } from "./HeroThemeContext";
 
 const navItems = [
   { to: "/", label: "Home" },
