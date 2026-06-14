@@ -1,5 +1,7 @@
+import { useEffect, useState } from "react";
 import Layout from "@/components/site/Layout";
 import TileLink from "@/components/site/TileLink";
+import { useHeroTheme } from "@/components/site/HeroThemeContext";
 import { Link } from "react-router-dom";
 import heroGlasshouse from "@/assets/hero-glasshouse-logo.png";
 import heroDish from "@/assets/hero-dish.jpg";
@@ -13,6 +15,23 @@ const slides = [heroGlasshouse, heroWine];
 const slideDuration = 15;
 
 const Index = () => {
+  const [active, setActive] = useState(0);
+  const { setLightImageActive } = useHeroTheme();
+
+  useEffect(() => {
+    const id = setInterval(
+      () => setActive((i) => (i + 1) % slides.length),
+      slideDuration * 1000,
+    );
+    return () => clearInterval(id);
+  }, []);
+
+  // slides[1] (heroWine) is the lighter image — darken header text while it shows
+  useEffect(() => {
+    setLightImageActive(active === 1);
+    return () => setLightImageActive(false);
+  }, [active, setLightImageActive]);
+
   return (
     <Layout
       title="Glass House — Creative New Zealand Dining · Whanganui"
@@ -25,8 +44,9 @@ const Index = () => {
             key={src}
             src={src}
             alt=""
-            className="absolute inset-0 w-full h-full object-cover object-top carousel-slide"
-            style={{ animationDelay: `${i * slideDuration}s` }}
+            className={`absolute inset-0 w-full h-full object-cover object-top transition-opacity duration-1000 ${
+              i === active ? "opacity-100" : "opacity-0"
+            }`}
           />
         ))}
         

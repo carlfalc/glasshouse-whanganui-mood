@@ -2,6 +2,7 @@ import { ReactNode, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import Header from "./Header";
 import Footer from "./Footer";
+import { HeroThemeProvider } from "./HeroThemeContext";
 
 interface Props {
   children: ReactNode;
@@ -26,11 +27,13 @@ const Layout = ({ children, title, description }: Props) => {
   }, [location.pathname, title, description]);
 
   return (
-    <div className="min-h-screen flex flex-col bg-background text-foreground">
-      <Header />
-      <main className="flex-1">{children}</main>
-      <Footer />
-    </div>
+    <HeroThemeProvider>
+      <div className="min-h-screen flex flex-col bg-background text-foreground">
+        <Header />
+        <main className="flex-1">{children}</main>
+        <Footer />
+      </div>
+    </HeroThemeProvider>
   );
 };
 

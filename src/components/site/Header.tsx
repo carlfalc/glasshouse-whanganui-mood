@@ -1,6 +1,7 @@
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
+import { useHeroTheme } from "./HeroThemeContext";
 
 const navItems = [
   { to: "/", label: "Home" },
@@ -16,6 +17,7 @@ const Header = () => {
   const [open, setOpen] = useState(false);
   const location = useLocation();
   const isHome = location.pathname === "/";
+  const { lightImageActive } = useHeroTheme();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -29,6 +31,8 @@ const Header = () => {
   }, [location.pathname]);
 
   const transparent = isHome && !scrolled && !open;
+  // On the transparent home hero, darken nav text only while the lighter image 2 is showing
+  const darkText = transparent && lightImageActive;
 
   return (
     <header
@@ -40,7 +44,9 @@ const Header = () => {
         <Link
           to="/"
           aria-label="Glass House home"
-          className="font-serif text-2xl tracking-tight text-cream"
+          className={`font-serif text-2xl tracking-tight transition-colors duration-500 ${
+            darkText ? "text-charcoal" : "text-cream"
+          }`}
         >
           ​
         </Link>
@@ -51,9 +57,9 @@ const Header = () => {
               key={item.label}
               to={item.to}
               className={({ isActive }) =>
-                `text-[11px] uppercase tracked text-cream/85 hover:text-brass transition-colors ${
-                  isActive ? "text-brass" : ""
-                }`
+                `text-[11px] uppercase tracked hover:text-brass transition-colors duration-500 ${
+                  darkText ? "text-charcoal/85" : "text-cream/85"
+                } ${isActive ? "!text-brass" : ""}`
               }
             >
               {item.label}
@@ -77,7 +83,7 @@ const Header = () => {
           <button
             aria-label="Open menu"
             onClick={() => setOpen((v) => !v)}
-            className="text-cream"
+            className={`transition-colors duration-500 ${darkText ? "text-charcoal" : "text-cream"}`}
           >
             {open ? <X size={24} /> : <Menu size={24} />}
           </button>
