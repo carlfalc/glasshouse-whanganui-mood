@@ -21,6 +21,7 @@ const Footer = () => {
         <div>
           <h4 className="text-[11px] uppercase tracked text-brass mb-6">Navigate</h4>
           <ul className="space-y-3 text-sm">
+            <li><Link to="/" className="hover:text-brass">Home</Link></li>
             <li><Link to="/menus" className="hover:text-brass">Menus</Link></li>
             <li><Link to="/about" className="hover:text-brass">About</Link></li>
             <li><Link to="/our-people" className="hover:text-brass">Our People</Link></li>
