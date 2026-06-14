@@ -44,8 +44,8 @@ const Header = () => {
         <Link
           to="/"
           aria-label="Glass House home"
-          className={`font-serif text-2xl tracking-tight transition-colors duration-500 ${
-            darkText ? "text-brass" : "text-cream"
+          className={`font-serif text-2xl tracking-tight transition-colors duration-500 hover:text-brass ${
+            darkText ? "text-charcoal" : "text-cream"
           }`}
         >
           ​
@@ -58,7 +58,7 @@ const Header = () => {
               to={item.to}
               className={({ isActive }) =>
                 `text-[11px] uppercase tracked hover:text-brass transition-colors duration-500 ${
-                  darkText ? "text-brass" : "text-cream/85"
+                  darkText ? "text-charcoal" : "text-cream/85"
                 } ${isActive ? "!text-brass" : ""}`
               }
             >
@@ -83,7 +83,7 @@ const Header = () => {
           <button
             aria-label="Open menu"
             onClick={() => setOpen((v) => !v)}
-            className={`transition-colors duration-500 ${darkText ? "text-brass" : "text-cream"}`}
+            className={`transition-colors duration-500 hover:text-brass ${darkText ? "text-charcoal" : "text-cream"}`}
           >
             {open ? <X size={24} /> : <Menu size={24} />}
           </button>
