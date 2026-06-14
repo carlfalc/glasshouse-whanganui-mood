@@ -44,8 +44,9 @@ const Index = () => {
             key={src}
             src={src}
             alt=""
-            className="absolute inset-0 w-full h-full object-cover object-top carousel-slide"
-            style={{ animationDelay: `${i * slideDuration}s` }}
+            className={`absolute inset-0 w-full h-full object-cover object-top transition-opacity duration-1000 ${
+              i === active ? "opacity-100" : "opacity-0"
+            }`}
           />
         ))}
         
