@@ -44,7 +44,9 @@ const Header = () => {
         <Link
           to="/"
           aria-label="Glass House home"
-          className="font-serif text-2xl tracking-tight text-cream"
+          className={`font-serif text-2xl tracking-tight transition-colors duration-500 ${
+            darkText ? "text-charcoal" : "text-cream"
+          }`}
         >
           ​
         </Link>
@@ -55,9 +57,9 @@ const Header = () => {
               key={item.label}
               to={item.to}
               className={({ isActive }) =>
-                `text-[11px] uppercase tracked text-cream/85 hover:text-brass transition-colors ${
-                  isActive ? "text-brass" : ""
-                }`
+                `text-[11px] uppercase tracked hover:text-brass transition-colors duration-500 ${
+                  darkText ? "text-charcoal/85" : "text-cream/85"
+                } ${isActive ? "!text-brass" : ""}`
               }
             >
               {item.label}
