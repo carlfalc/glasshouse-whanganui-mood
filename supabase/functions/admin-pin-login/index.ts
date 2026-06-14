@@ -56,7 +56,8 @@ Deno.serve(async (req) => {
     return json({ error: "PIN is not configured" }, 500);
   }
 
-  if (pin !== pinRow.pin) {
+  const pinMatches = await bcryptCompare(pin, pinRow.pin);
+  if (!pinMatches) {
     return json({ error: "Incorrect PIN" }, 401);
   }
 
