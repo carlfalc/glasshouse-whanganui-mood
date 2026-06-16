@@ -41,6 +41,7 @@ const sections: Section[] = [
     title: "Mains",
     items: [
       { name: "Chicken burger", price: "$29", description: "Buttermilk fried chicken burger, lettuce, cheese, pickles, aioli on a brioche bun with fries", tags: "GFA" },
+      { name: "Beef burger", price: "$29", description: "Beef burger, cheese, lettuce, tomato, beetroot relish, aioli on a brioche bun with fries. Add a fried egg on the (glass)house if you'd like", tags: "GFA, DFA" },
       { name: "Glasshouse Angus steak (250g)", price: "$45", description: "Pan-fried Pure Angus fillet, fondant potatoes, burnt butter fried broccolini and red wine jus. Side of Béarnaise sauce $4", tags: "GF" },
       { name: "Chicken roulade risotto", price: "$39", description: "Pan-fried rolled chicken, romesco risotto, chimichurri, pickled lemon, pecorino cheese", tags: "GF" },
       { name: "Seared market fish and scallops", price: "$39", description: "Fresh market fish, scallops, edamame beans, sesame seed and saffron velouté", tags: "GF" },
