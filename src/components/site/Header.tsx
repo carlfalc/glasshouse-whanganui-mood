@@ -92,7 +92,7 @@ const Header = () => {
 
       {/* Mobile overlay */}
       <div
-        className={`lg:hidden fixed inset-0 top-20 bg-background transition-opacity duration-300 ${
+        className={`md:hidden fixed inset-0 top-20 bg-background transition-opacity duration-300 ${
           open ? "opacity-100 visible" : "opacity-0 invisible"
         }`}
       >
