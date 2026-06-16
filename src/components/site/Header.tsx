@@ -2,6 +2,7 @@ import { Link, NavLink, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { useHeroTheme } from "./HeroThemeContext";
+import BookingDialog from "./BookingDialog";
 
 const navItems = [
   { to: "/", label: "Home" },
@@ -15,6 +16,7 @@ const navItems = [
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const [bookingOpen, setBookingOpen] = useState(false);
   const location = useLocation();
   const isHome = location.pathname === "/";
   const { lightImageActive } = useHeroTheme();
@@ -65,21 +67,21 @@ const Header = () => {
               {item.label}
             </NavLink>
           ))}
-          <a
-            href="tel:0062424177"
+          <button
+            onClick={() => setBookingOpen(true)}
             className="inline-block text-[11px] uppercase tracked px-5 py-3 bg-brass text-charcoal hover:bg-brass/90 transition-colors"
           >
             Book
-          </a>
+          </button>
         </nav>
 
         <div className="flex items-center gap-4 sm:hidden">
-          <a
-            href="tel:0062424177"
+          <button
+            onClick={() => setBookingOpen(true)}
             className="text-[11px] uppercase tracked px-4 py-2.5 bg-brass text-charcoal"
           >
             Book
-          </a>
+          </button>
           <button
             aria-label="Open menu"
             onClick={() => setOpen((v) => !v)}
