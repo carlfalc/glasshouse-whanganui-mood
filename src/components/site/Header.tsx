@@ -51,7 +51,7 @@ const Header = () => {
           ​
         </Link>
 
-        <nav className="hidden lg:flex items-center gap-10">
+        <nav className="hidden md:flex flex-wrap items-center justify-end gap-x-6 gap-y-2">
           {navItems.map((item) => (
             <NavLink
               key={item.label}
@@ -73,7 +73,7 @@ const Header = () => {
           </a>
         </nav>
 
-        <div className="flex items-center gap-4 lg:hidden">
+        <div className="flex items-center gap-4 md:hidden">
           <a
             href="tel:0062424177"
             className="text-[11px] uppercase tracked px-4 py-2.5 bg-brass text-charcoal"
@@ -92,7 +92,7 @@ const Header = () => {
 
       {/* Mobile overlay */}
       <div
-        className={`lg:hidden fixed inset-0 top-20 bg-background transition-opacity duration-300 ${
+        className={`md:hidden fixed inset-0 top-20 bg-background transition-opacity duration-300 ${
           open ? "opacity-100 visible" : "opacity-0 invisible"
         }`}
       >
