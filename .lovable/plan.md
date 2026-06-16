@@ -1,40 +1,20 @@
-## Goal
+## What's happening
 
-On the landing-page hero slider, the nav header text (Home, Menus, Culinary Specialists, About, Our People, Contact + logo/menu icon) is hard to read when the slider transitions to **image 2** (the lighter/whiter wine image). Keep the current cream colour on **image 1** (the main Glass House branding image), and switch the nav text to a dark colour only while image 2 is showing — then switch back to cream when it cycles back to image 1.
+The header navigation fix is already live and confirmed working in the preview. The full horizontal menu (Home, Menus, Culinary Specialists, About, Our People, Contact) shows along the top on wider screens.
 
-## Approach
+The reason you still see the hamburger is the **breakpoint**: the menu currently switches to horizontal only at **768px wide and up**. Your preview window is ~726px wide, just below that line, so it still shows the hamburger. It is not a caching problem.
 
-The cross-fade is currently driven purely by CSS, so nothing in the app knows which slide is visible. To make the header react reliably, drive the active slide from React state shared between the hero and the header, so the colour change stays perfectly in sync with the image.
+## The decision
 
-### 1. Share the active slide state
+There are six menu items plus a Book button. On genuinely small phone screens they won't fit on one line, which is why a hamburger exists at all. The question is where to draw the line.
 
-- Create a small shared signal for "is the light hero image currently active." Simplest reliable option: a lightweight React context (e.g. `HeroThemeContext`) provided in `Layout` (which already renders both `Header` and the page content), defaulting to "dark image / cream text."
-- The home hero updates this signal as the slider advances; every other page leaves it at the default so nothing changes off the home page.
+### Option A — Lower the breakpoint (recommended)
+Switch the horizontal menu to appear from a smaller width (e.g. ~640px) so it shows on tablets and narrow desktop windows like yours, only collapsing to a hamburger on actual phones. The labels would wrap to a second line if space is tight.
 
-### 2. Drive the slider in React (replace CSS-only cycling)
+### Option B — Always horizontal, never a hamburger
+Remove the hamburger entirely so the headings are always along the top at every screen size. On small phones the items would shrink/wrap and could look cramped, but it matches "put it back exactly how it was."
 
-- In `src/pages/Index.tsx`, advance the visible slide with a timer in state (one image shown at a time, cross-fading), instead of relying solely on the CSS `crossFade` keyframes. Each slide shows for the existing 15s interval so the visual pacing is unchanged.
-- When the active slide is image 2 (`heroWine`), set the shared signal to "light image"; when it's image 1 (`heroGlasshouse`), set it back to "dark image."
-- Reset the signal to default when leaving the home page.
-
-### 3. Make the header colour respond
-
-In `src/components/site/Header.tsx`:
-- Read the shared signal. Only when the header is in its transparent state on the home page (`transparent === true`) AND the light image is active, render the nav links, logo and mobile menu icon in a dark colour (charcoal) instead of cream.
-- The brass "Book" button, hover states, and active-link brass colour stay as-is (brass reads fine on both images).
-- On image 1, and any time the header is in its solid/scrolled state, the text stays cream exactly as today — no change to the main branding image.
-
-## Visual detail
-
-- Image 1 (`heroGlasshouse`): nav text stays `text-cream` — unchanged.
-- Image 2 (`heroWine`): nav text becomes `text-charcoal` (with a matching darker hover, e.g. still brass) for the duration that image is on screen, transitioning smoothly via the existing `transition-colors`.
-- The change is scoped to the transparent home-hero header only; scrolled header and all other pages are untouched.
-
-## Files changed
-
-- `src/components/site/Layout.tsx` — provide the shared hero-theme context.
-- `src/pages/Index.tsx` — drive the slider in React and publish which image is active.
-- `src/components/site/Header.tsx` — switch nav/logo/menu-icon colour to dark while image 2 is active in the transparent home hero.
-</content>
-<summary>Make the hero slider drive a shared "active image" signal so the header nav text turns dark only while the lighter image 2 is showing, while image 1 keeps its cream branding colour.</summary>
-</invoke>
+## Technical detail
+- File: `src/components/site/Header.tsx`
+- Option A: change the `md:flex` / `md:hidden` breakpoints to `sm:` (or a custom `min-[640px]`) on the desktop `<nav>`, the mobile button wrapper, and the mobile overlay.
+- Option B: make the desktop `<nav>` always `flex`, remove the hamburger button block and the mobile overlay.
