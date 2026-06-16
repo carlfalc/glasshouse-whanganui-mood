@@ -3,6 +3,7 @@ import Layout from "@/components/site/Layout";
 import TileLink from "@/components/site/TileLink";
 import { useHeroTheme } from "@/components/site/HeroThemeContext";
 import { Link } from "react-router-dom";
+import BookingDialog from "@/components/site/BookingDialog";
 import heroGlasshouse from "@/assets/hero-glasshouse-logo.png";
 import heroDish from "@/assets/hero-dish.jpg";
 import heroInterior from "@/assets/hero-interior.jpg";
@@ -16,6 +17,7 @@ const slideDuration = 15;
 
 const Index = () => {
   const [active, setActive] = useState(0);
+  const [bookingOpen, setBookingOpen] = useState(false);
   const { setLightImageActive } = useHeroTheme();
 
   useEffect(() => {
@@ -67,12 +69,12 @@ const Index = () => {
             >
               Menus
             </Link>
-            <a
-              href="tel:0062424177"
+            <button
+              onClick={() => setBookingOpen(true)}
               className="text-[11px] uppercase tracked px-7 py-4 bg-brass text-charcoal hover:bg-brass/90 transition-colors"
             >
               Book
-            </a>
+            </button>
           </div>
         </div>
       </section>
@@ -131,6 +133,8 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      <BookingDialog open={bookingOpen} onOpenChange={setBookingOpen} />
     </Layout>
   );
 };
