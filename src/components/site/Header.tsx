@@ -110,6 +110,8 @@ const Header = () => {
           ))}
         </nav>
       </div>
+
+      <BookingDialog open={bookingOpen} onOpenChange={setBookingOpen} />
     </header>
   );
 };
