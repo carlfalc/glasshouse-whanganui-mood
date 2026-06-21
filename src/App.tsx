@@ -15,6 +15,7 @@ import CulinarySpecialists from "./pages/CulinarySpecialists.tsx";
 import OrderCoffee from "./pages/OrderCoffee.tsx";
 import InHouseCoffee from "./pages/InHouseCoffee.tsx";
 import Contact from "./pages/Contact.tsx";
+import Unsubscribe from "./pages/Unsubscribe.tsx";
 import NotFound from "./pages/NotFound.tsx";
 import AdminLogin from "./pages/coffee/AdminLogin.tsx";
 import AdminHome from "./pages/coffee/AdminHome.tsx";
