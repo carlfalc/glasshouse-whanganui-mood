@@ -16,10 +16,28 @@ const Contact = () => {
     e.preventDefault();
     setSending(true);
     try {
-      const { error } = await supabase.functions.invoke("send-contact-email", {
-        body: form,
+      const key = `contact-${Date.now()}`;
+      const { error } = await supabase.functions.invoke("send-transactional-email", {
+        body: {
+          templateName: "contact-notification",
+          recipientEmail: "Info@glass-house.co.nz",
+          idempotencyKey: `contact-notify-${key}`,
+          templateData: form,
+        },
       });
       if (error) throw error;
+
+      if (form.email) {
+        await supabase.functions.invoke("send-transactional-email", {
+          body: {
+            templateName: "contact-confirmation",
+            recipientEmail: form.email,
+            idempotencyKey: `contact-confirm-${key}`,
+            templateData: { name: form.name },
+          },
+        });
+      }
+
       toast.success("Thanks for thinking of us — we'll be in contact as soon as possible.");
       setSubmitted(true);
     } catch (err) {
@@ -29,6 +47,7 @@ const Contact = () => {
       setSending(false);
     }
   };
+
 
   return (
     <Layout title="Contact — Glass House Whanganui" description="Contact Glass House restaurant in Whanganui, New Zealand. Phone 06 242 4177.">
