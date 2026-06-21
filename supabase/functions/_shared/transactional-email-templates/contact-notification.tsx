@@ -69,4 +69,4 @@ const hr = { borderColor: '#e6e1d8', margin: '20px 0' }
 const section = { margin: '0' }
 const label = { fontSize: '11px', letterSpacing: '2px', textTransform: 'uppercase' as const, color: '#B89968', margin: '14px 0 2px' }
 const value = { fontSize: '15px', color: '#1A1A1A', margin: '0', whiteSpace: 'pre-wrap' as const }
-const footer = { fontSize: '12px', color: '#8a8madd'.slice(0, 7) || '#8a8a8a', margin: '0' }
+const footer = { fontSize: '12px', color: '#8a8a8a', margin: '0' }
