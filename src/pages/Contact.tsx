@@ -59,9 +59,10 @@ const Contact = () => {
             <div>
               <h2 className="text-[11px] uppercase tracked text-brass mb-4">Hours</h2>
               <div className="text-cream/80 leading-relaxed space-y-1">
-                <p>Mon – Thursday · Dinner from 4pm</p>
-                <p>Friday to Saturday · Brunch & Lunch then Dinner from 10am to Late</p>
-                <p>Sun · Brunch & Lunch from 10am, Dinner 5 – 8pm</p>
+                <p>Soft Opening Hours&nbsp;
+Tues 30 June, Wed 1st July & Thursday 2nd · Dinner from 4pm&nbsp;</p>
+                <p>Saturday · Open at 3pm Dinner from 4pm to Late</p>
+                <p></p>
               </div>
             </div>
             <div>
