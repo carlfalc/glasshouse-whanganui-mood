@@ -114,9 +114,7 @@ const Index = () => {
               <p className="pt-4"><a href="tel:062424177" className="hover:text-brass font-bold">06 242 4177</a></p>
               <div className="pt-6 space-y-1 text-charcoal/80">
                 <p className="text-[11px] uppercase tracking-wider text-brass mb-2">Opening Hours</p>
-                <p>Mon to Thursday ·&nbsp; Open from 3pm - Dinner from 4pm to Late</p>
-                <p>Friday to Saturday · Brunch & Lunch to Dinner from 10am to Late</p>
-                <p>Sun · Brunch & Lunch from 10am through to Dinner 5 – 8pm</p>
+                <p className="whitespace-pre-line">Soft Opening Hours&nbsp; Tues 30 June, Wed 1st July & Thursday 2nd · Dinner from 4pm&nbsp;{"\n\n"}Saturday · Open at 3pm Dinner from 4pm to Late</p>
               </div>
             </div>
           </div>
