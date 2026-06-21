@@ -53,9 +53,17 @@ const Index = () => {
         ))}
         
         <div className="absolute top-24 md:top-28 left-0 right-0 z-10 container-narrow fade-up">
-          <p className="text-cream text-[11px] md:text-sm uppercase tracked max-w-md">
-            Early bird reservations are only being taken by our booking engine — we open 3 July. Don't miss out, book now
+          <p className="text-cream text-[11px] md:text-sm uppercase tracked max-w-md whitespace-pre-line">
+            {"Soft opening — reservations now open.\n"}
+            {"Tues 30 June, Wed 1 & Thurs 2 July · Dinner from 4pm.\n"}
+            {"Sat 4 July · Open 3pm, Dinner from 4pm to Late."}
           </p>
+          <button
+            onClick={() => setBookingOpen(true)}
+            className="mt-5 inline-block text-[11px] uppercase tracked px-7 py-4 bg-brass text-charcoal hover:bg-brass/90 transition-colors"
+          >
+            Book Now
+          </button>
         </div>
 
         <div className="relative z-10 h-full container-narrow flex flex-col justify-end pb-10 md:pb-14">
