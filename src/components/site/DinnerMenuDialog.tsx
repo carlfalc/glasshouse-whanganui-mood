@@ -28,7 +28,7 @@ const groups: Group[] = [
         items: [
           { name: "Fries", price: "$10", description: "House seasoning, confit garlic and citrus aioli, tomato sauce", tags: "GF, DF, VG" },
           { name: "Homemade cornbread", price: "$11", description: "Served with burnt butter", tags: "GF, V" },
-          { name: "Fried chicken bites", price: "$19", description: "Buttermilk fried chicken, pickles, citrus and garlic aioli. Add Buffalo hot sauce on the (glass)house", tags: "GF" },
+          { name: "Fried chicken bites", price: "$20", description: "Buttermilk fried chicken, pickles, citrus and garlic aioli. Add Buffalo hot sauce on the (glass)house", tags: "GF" },
           { name: "Chicken burger", price: "$29", description: "Buttermilk fried chicken burger, lettuce, cheese, pickles, aioli on a brioche bun with fries", tags: "GFA" },
           { name: "Beef burger", price: "$29", description: "Beef burger, cheese, lettuce, tomato, beetroot relish, aioli on a brioche bun with fries. Add a fried egg on the (glass)house", tags: "GFA, DFA" },
           { name: "Veggie burger", price: "$26", description: "Veggie patty, lettuce, tomato, sweet and savoury fruit chutney, vegan aioli on a brioche bun with fries", tags: "GFA, VG" },
@@ -54,9 +54,9 @@ const groups: Group[] = [
         title: "Small Shares",
         items: [
           { name: "Market fish ceviche", price: "$20", description: "Fresh raw fish, tomato salsa, pickled chilli, lime, sesame infused oil", tags: "GF, DF" },
-          { name: "Tomato burrata salad", price: "$20", description: "Creamy burrata, burst roasted cherry tomatoes, homemade basil pesto, fresh basil and warm crusty bread", tags: "V, GFA" },
-          { name: "Horopito salt and pepper squid", price: "$20", description: "Fried squid fillets, horopito togarashi seasoning, citrus and confit garlic aioli, pecorino and rocket salad", tags: "GF, DFA" },
-          { name: "Miso pork belly bites", price: "$20", description: "12-hour slow cooked pork belly, miso caramel, pickled apple, sesame and Sichuan seasoning", tags: "GF, DF" },
+          { name: "Tomato burrata salad", price: "$25", description: "Creamy burrata, burst roasted cherry tomatoes, homemade basil pesto, fresh basil and warm crusty bread", tags: "V, GFA" },
+          { name: "Horopito salt and pepper squid", price: "$24", description: "Fried squid fillets, horopito togarashi seasoning, citrus and confit garlic aioli, pecorino and rocket salad", tags: "GF, DFA" },
+          { name: "Miso pork belly bites", price: "$24", description: "12-hour slow cooked pork belly, miso caramel, pickled apple, sesame and Sichuan seasoning", tags: "GF, DF" },
           { name: "Chicken liver pâté", price: "$20", description: "Rich brandy chicken liver pâté, pickled cucumber, fresh tomato, Glasshouse crackers", tags: "GF" },
           { name: "Potato bake", price: "$15 / $25", description: "Gratinated agria potatoes in a creamy vintage cheddar sauce. Share for 2 / share for 5", tags: "GF, V" },
         ],
@@ -77,8 +77,8 @@ const groups: Group[] = [
         title: "Mains",
         items: [
           { name: "Glasshouse Angus steak (250g)", price: "$45", description: "Pan-fried Pure Angus fillet, fondant potatoes, burnt butter fried broccolini and red wine jus. Side of Béarnaise sauce $4", tags: "GF" },
-          { name: "Chicken roulade risotto", price: "$39", description: "Pan-fried rolled chicken, romesco risotto, chimichurri, pickled lemon, pecorino cheese", tags: "GF" },
-          { name: "Seared market fish and scallops", price: "$39", description: "Fresh market fish, scallops, edamame beans, sesame seed and saffron velouté", tags: "GF" },
+          { name: "Chicken roulade risotto", price: "$40", description: "Pan-fried rolled chicken, romesco risotto, chimichurri, pickled lemon, pecorino cheese", tags: "GF" },
+          { name: "Seared market fish and scallops", price: "$40", description: "Fresh market fish, scallops, edamame beans, sesame seed and saffron velouté", tags: "GF" },
           { name: "Mushroom gnocchi", price: "$38", description: "Hand-rolled gnocchi pan-fried in butter, mushrooms, spinach, mozzarella curd", tags: "GF, V" },
           { name: "Sweet and spicy dumplings", price: "$30", description: "Fried vegan rice paper dumplings, miso sauce, pickled lemon, microherb salad, chunky chilli oil", tags: "GF, VG" },
           { name: "Seasonal special", description: "A creative dish designed every few weeks by the kitchen team to celebrate seasonal ingredients and flair. Ask your waiter" },
