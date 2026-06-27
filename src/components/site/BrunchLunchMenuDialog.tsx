@@ -3,10 +3,10 @@ import { Printer, Share2, Download } from "lucide-react";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import { toast } from "sonner";
 import menuPdf from "@/assets/Glasshouse_Brunch_Lunch_Menu.pdf.asset.json";
-import page1 from "@/assets/brunch-lunch-menu-page-1.png";
-import page2 from "@/assets/brunch-lunch-menu-page-2.png";
+import page1 from "@/assets/brunch-lunch-menu-page-1.png.asset.json";
+import page2 from "@/assets/brunch-lunch-menu-page-2.png.asset.json";
 
-const pages = [page1, page2];
+const pages = [page1.url, page2.url];
 
 const buildPrintHtml = () => {
   const imgs = pages
