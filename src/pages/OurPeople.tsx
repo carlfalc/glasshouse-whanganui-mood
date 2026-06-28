@@ -19,6 +19,7 @@ const sousChefs: Member[] = [
   { name: "Naureen Shaik", role: "Sous Chef", bio: "Bio coming soon." },
   { name: "Muhammad Rehan", role: "Sous Chef", bio: "Bio coming soon." },
   { name: "Saroj Bhandari", role: "Sous Chef", bio: "Bio coming soon." },
+  { name: "Andrey Kiselev", role: "Sous Chef", bio: "Bio coming soon." },
 ];
 
 const breakfastChef: Member = {
