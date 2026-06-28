@@ -4,14 +4,17 @@ import TileLink from "@/components/site/TileLink";
 import DinnerMenuDialog from "@/components/site/DinnerMenuDialog";
 import RoomServiceMenuDialog from "@/components/site/RoomServiceMenuDialog";
 import BrunchLunchMenuDialog from "@/components/site/BrunchLunchMenuDialog";
+import BeverageMenuDialog from "@/components/site/BeverageMenuDialog";
 import menuBrunch from "@/assets/menu-brunch.jpg";
 import menuDinner from "@/assets/menu-dinner.jpg";
 import menuRoom from "@/assets/menu-room-service.jpg";
+import menuBeverages from "@/assets/menu-beverages.jpg";
 
 const Menus = () => {
   const [dinnerOpen, setDinnerOpen] = useState(false);
   const [roomOpen, setRoomOpen] = useState(false);
   const [brunchOpen, setBrunchOpen] = useState(false);
+  const [beverageOpen, setBeverageOpen] = useState(false);
 
   return (
     <Layout title="Menus — Glass House Whanganui" description="Brunch & Lunch, Dinner, and Room Service menus at Glass House, Whanganui.">
@@ -26,6 +29,7 @@ const Menus = () => {
           <TileLink to="/menus" image={menuDinner} label="Dinner" onClick={(e) => { e.preventDefault(); setDinnerOpen(true); }} />
 
           <TileLink to="/menus" image={menuRoom} label="Room Service" cornerText="Hotels King Room" onClick={(e) => { e.preventDefault(); setRoomOpen(true); }} />
+          <TileLink to="/menus" image={menuBeverages} label="Beverages" onClick={(e) => { e.preventDefault(); setBeverageOpen(true); }} />
         </div>
       </section>
       <section className="container-narrow pb-32 text-center">
@@ -40,6 +44,7 @@ const Menus = () => {
       <DinnerMenuDialog open={dinnerOpen} onOpenChange={setDinnerOpen} />
       <RoomServiceMenuDialog open={roomOpen} onOpenChange={setRoomOpen} />
       <BrunchLunchMenuDialog open={brunchOpen} onOpenChange={setBrunchOpen} />
+      <BeverageMenuDialog open={beverageOpen} onOpenChange={setBeverageOpen} />
     </Layout>
   );
 };
