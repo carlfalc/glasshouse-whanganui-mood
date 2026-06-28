@@ -44,6 +44,7 @@ const Menus = () => {
       <DinnerMenuDialog open={dinnerOpen} onOpenChange={setDinnerOpen} />
       <RoomServiceMenuDialog open={roomOpen} onOpenChange={setRoomOpen} />
       <BrunchLunchMenuDialog open={brunchOpen} onOpenChange={setBrunchOpen} />
+      <BeverageMenuDialog open={beverageOpen} onOpenChange={setBeverageOpen} />
     </Layout>
   );
 };
