@@ -29,7 +29,7 @@ const TileLink = ({ to, image, label, className = "", cornerText, onClick }: Pro
       </span>
     )}
     <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6">
-      <h3 className="font-serif text-4xl md:text-5xl text-cream">{label}</h3>
+      <h3 className="font-serif text-4xl md:text-5xl text-cream whitespace-pre-line">{label}</h3>
       <span className="mt-4 text-[11px] uppercase tracked text-cream/90 border-b border-transparent group-hover:border-brass pb-1 transition-colors">
         Explore
       </span>
