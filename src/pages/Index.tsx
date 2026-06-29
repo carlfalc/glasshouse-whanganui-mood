@@ -124,11 +124,7 @@ const Index = () => {
               <div className="pt-6 space-y-1 text-charcoal/80">
                 <p className="text-[11px] uppercase tracking-wider text-brass mb-2">Opening Hours</p>
                 <p className="whitespace-pre-line">
-                  Soft Opening Hours&nbsp;&nbsp;{"\n"}
-                  Tues 30 June, Wed 1 July & Thursday 2 July · Dinner from 4pm&nbsp;{"\n"}
-                  Saturday 4 July · Open at 3pm Dinner from 4pm to Late{"\n\n"}
-                  After this period we'll be open Monday to Thursdays for Dinner&nbsp;{"\n"}
-                  Then all day&nbsp;Friday, Saturdays and Sundays - coming soon!
+                  Opening 7 July Tuesday to Saturday 3pm to Late
                 </p>
               </div>
             </div>
