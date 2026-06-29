@@ -54,9 +54,9 @@ const Index = () => {
         
         <div className="absolute top-24 md:top-28 left-0 right-0 z-10 container-narrow fade-up">
           <p className="text-cream text-[11px] md:text-sm uppercase tracked max-w-md whitespace-pre-line">
-            {"Soft opening — reservations now open.\n"}
-            {"Open from 7 July · 4pm to 9pm.\n"}
-            {"Tuesday to Saturday for Dinner service and drinks.\n"}
+            {"Opening 7 July — reservations now open.\n"}
+            {"Tuesday to Saturday 3pm to Late.\n"}
+            {"Dinner service and drinks.\n"}
             {"Bookings available online only."}
           </p>
           <button
