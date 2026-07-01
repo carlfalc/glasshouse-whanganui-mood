@@ -33,7 +33,7 @@ const Footer = () => {
         <div>
           <h4 className="text-[11px] uppercase tracked text-brass mb-6">Hours</h4>
           <p className="text-sm text-cream/70 leading-relaxed">
-            Tuesday - Saturday 3pm to late\u00a0
+            Tuesday - Saturday 3pm to late
           </p>
           <div className="flex gap-4 mt-6">
             <a href="#" aria-label="Instagram" className="text-cream/70 hover:text-brass"><Instagram size={18} /></a>
