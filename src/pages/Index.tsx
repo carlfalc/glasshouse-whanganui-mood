@@ -25,16 +25,12 @@ const Index = () => {
     >
       {/* HERO */}
       <section className="relative h-screen w-full overflow-hidden">
-        {slides.map((src, i) => (
-          <img
-            key={src}
-            src={src}
-            alt=""
-            className={`absolute inset-0 w-full h-full object-cover object-top transition-opacity duration-1000 ${
-              i === active ? "opacity-100" : "opacity-0"
-            }`}
-          />
-        ))}
+        <img
+          src={heroGlasshouse}
+          alt=""
+          className="absolute inset-0 w-full h-full object-cover object-top"
+        />
+
         
         <div className="absolute top-24 md:top-28 left-0 right-0 z-10 container-narrow fade-up">
           <p className="text-cream text-[11px] md:text-sm uppercase tracked max-w-md whitespace-pre-line">
