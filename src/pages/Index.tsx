@@ -5,34 +5,18 @@ import { useHeroTheme } from "@/components/site/HeroThemeContext";
 import { Link } from "react-router-dom";
 import BookingDialog from "@/components/site/BookingDialog";
 import heroGlasshouse from "@/assets/hero-glasshouse-logo.png";
-import heroDish from "@/assets/hero-dish.jpg";
-import heroInterior from "@/assets/hero-interior.jpg";
-import heroWine from "@/assets/hero-wine.jpg";
 import menuBrunch from "@/assets/menu-brunch.jpg";
 import aboutHero from "@/assets/about-hero.jpg";
 import culinarySpecialistsTile from "@/assets/culinary-specialists-tile.jpg";
 
-const slides = [heroGlasshouse, heroWine];
-const slideDuration = 15;
-
 const Index = () => {
-  const [active, setActive] = useState(0);
   const [bookingOpen, setBookingOpen] = useState(false);
   const { setLightImageActive } = useHeroTheme();
 
   useEffect(() => {
-    const id = setInterval(
-      () => setActive((i) => (i + 1) % slides.length),
-      slideDuration * 1000,
-    );
-    return () => clearInterval(id);
-  }, []);
-
-  // slides[1] (heroWine) is the lighter image — darken header text while it shows
-  useEffect(() => {
-    setLightImageActive(active === 1);
+    setLightImageActive(false);
     return () => setLightImageActive(false);
-  }, [active, setLightImageActive]);
+  }, [setLightImageActive]);
 
   return (
     <Layout
