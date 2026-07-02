@@ -5,34 +5,18 @@ import { useHeroTheme } from "@/components/site/HeroThemeContext";
 import { Link } from "react-router-dom";
 import BookingDialog from "@/components/site/BookingDialog";
 import heroGlasshouse from "@/assets/hero-glasshouse-logo.png";
-import heroDish from "@/assets/hero-dish.jpg";
-import heroInterior from "@/assets/hero-interior.jpg";
-import heroWine from "@/assets/hero-wine.jpg";
 import menuBrunch from "@/assets/menu-brunch.jpg";
 import aboutHero from "@/assets/about-hero.jpg";
 import culinarySpecialistsTile from "@/assets/culinary-specialists-tile.jpg";
 
-const slides = [heroGlasshouse, heroWine];
-const slideDuration = 15;
-
 const Index = () => {
-  const [active, setActive] = useState(0);
   const [bookingOpen, setBookingOpen] = useState(false);
   const { setLightImageActive } = useHeroTheme();
 
   useEffect(() => {
-    const id = setInterval(
-      () => setActive((i) => (i + 1) % slides.length),
-      slideDuration * 1000,
-    );
-    return () => clearInterval(id);
-  }, []);
-
-  // slides[1] (heroWine) is the lighter image — darken header text while it shows
-  useEffect(() => {
-    setLightImageActive(active === 1);
+    setLightImageActive(false);
     return () => setLightImageActive(false);
-  }, [active, setLightImageActive]);
+  }, [setLightImageActive]);
 
   return (
     <Layout
@@ -41,16 +25,12 @@ const Index = () => {
     >
       {/* HERO */}
       <section className="relative h-screen w-full overflow-hidden">
-        {slides.map((src, i) => (
-          <img
-            key={src}
-            src={src}
-            alt=""
-            className={`absolute inset-0 w-full h-full object-cover object-top transition-opacity duration-1000 ${
-              i === active ? "opacity-100" : "opacity-0"
-            }`}
-          />
-        ))}
+        <img
+          src={heroGlasshouse}
+          alt=""
+          className="absolute inset-0 w-full h-full object-cover object-top"
+        />
+
         
         <div className="absolute top-24 md:top-28 left-0 right-0 z-10 container-narrow fade-up">
           <p className="text-cream text-[11px] md:text-sm uppercase tracked max-w-md whitespace-pre-line">
