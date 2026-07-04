@@ -14,6 +14,7 @@ const Layout = ({ children, title, description }: Props) => {
   const location = useLocation();
   useEffect(() => {
     window.scrollTo(0, 0);
+    window.fbq?.("track", "PageView");
     if (title) document.title = title;
     if (description) {
       let m = document.querySelector('meta[name="description"]');
