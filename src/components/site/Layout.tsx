@@ -12,9 +12,15 @@ interface Props {
 
 const Layout = ({ children, title, description }: Props) => {
   const location = useLocation();
+  const firstLoad = useRef(true);
   useEffect(() => {
     window.scrollTo(0, 0);
-    window.fbq?.("track", "PageView");
+    // index.html already tracks the initial PageView; only track subsequent navigations
+    if (firstLoad.current) {
+      firstLoad.current = false;
+    } else {
+      window.fbq?.("track", "PageView");
+    }
     if (title) document.title = title;
     if (description) {
       let m = document.querySelector('meta[name="description"]');
