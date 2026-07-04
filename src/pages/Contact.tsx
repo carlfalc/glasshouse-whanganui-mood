@@ -76,15 +76,6 @@ const Contact = () => {
               </p>
             </div>
             <div>
-              <h2 className="text-[11px] uppercase tracked text-brass mb-4">Hours</h2>
-              <div className="text-cream/80 leading-relaxed space-y-1">
-                <p>Soft Opening Hours&nbsp;
-Tues 30 June, Wed 1st July & Thursday 2nd · Dinner from 4pm&nbsp;</p>
-                <p>Saturday · Open at 3pm Dinner from 4pm to Late</p>
-                <p></p>
-              </div>
-            </div>
-            <div>
               <h2 className="text-[11px] uppercase tracked text-brass mb-4">Follow</h2>
               <div className="flex gap-4">
                 <a href="#" aria-label="Instagram" className="text-cream/80 hover:text-brass"><Instagram size={20} /></a>
