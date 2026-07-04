@@ -230,6 +230,7 @@ const CulinarySpecialists = () => (
           summer with an open door to our Whanganui community.
         </p>
         <p className="font-serif text-xl text-cream">Ngā mihi nui</p>
+        <p className="font-serif text-xl text-cream">Carl &amp; Freya</p>
       </div>
     </section>
   </Layout>
