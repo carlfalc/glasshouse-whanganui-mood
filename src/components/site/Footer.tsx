@@ -37,7 +37,7 @@ const Footer = () => {
           </p>
           <div className="flex gap-4 mt-6">
             <a href="#" aria-label="Instagram" className="text-cream/70 hover:text-brass"><Instagram size={18} /></a>
-            <a href="#" aria-label="Facebook" className="text-cream/70 hover:text-brass"><Facebook size={18} /></a>
+            <a href="https://www.facebook.com/profile.php?id=61590551065476" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="text-cream/70 hover:text-brass"><Facebook size={18} /></a>
           </div>
         </div>
       </div>
