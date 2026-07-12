@@ -25,7 +25,7 @@ const Menus = () => {
       </section>
       <section className="container-narrow pb-16">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
-          <TileLink to="/menus" image={menuBrunch} label={"Brunch & Lunch\u00a0\nComing Soon!"} onClick={(e) => { e.preventDefault(); setBrunchOpen(true); }} />
+          <TileLink to="/menus" image={menuBrunch} label={"Brunch & Lunch\u00a0\nNow Open Friday, Saturday & Sunday"} onClick={(e) => { e.preventDefault(); setBrunchOpen(true); }} />
           <TileLink to="/menus" image={menuDinner} label="Dinner" onClick={(e) => { e.preventDefault(); setDinnerOpen(true); }} />
 
           <TileLink to="/menus" image={menuRoom} label="Room Service" cornerText="Hotels King Room" onClick={(e) => { e.preventDefault(); setRoomOpen(true); }} />
