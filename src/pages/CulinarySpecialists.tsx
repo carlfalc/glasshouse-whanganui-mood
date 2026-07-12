@@ -47,10 +47,6 @@ const fohCredentials = [
     title: "Specialist barista & coffee programme",
     body: "A dedicated barista and coffee specialist to lead our barista and self-serve coffee offering across the buffet and bar.",
   },
-  {
-    title: "Competition-level barista expertise",
-    body: "A barista who has trained and judged baristas at competitive level; a genuine coffee geek who loves crafting specialty coffee, ensuring our coffee programme is exceptional from day one. We have also partnered with Grinders Coffee — Australia’s number one coffee and bean company — for a premium café coffee experience.",
-  },
 ];
 
 const footprint = [
