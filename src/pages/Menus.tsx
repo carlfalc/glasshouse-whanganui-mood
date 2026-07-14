@@ -9,6 +9,7 @@ import menuBrunch from "@/assets/menu-brunch.jpg";
 import menuDinner from "@/assets/menu-dinner.jpg";
 import menuRoom from "@/assets/menu-room-service.jpg";
 import menuBeverages from "@/assets/menu-beverages.jpg";
+import menuCocktails from "@/assets/menu-cocktails.jpg";
 
 const Menus = () => {
   const [dinnerOpen, setDinnerOpen] = useState(false);
