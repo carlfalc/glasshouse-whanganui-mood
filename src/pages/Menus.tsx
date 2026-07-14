@@ -9,6 +9,7 @@ import menuBrunch from "@/assets/menu-brunch.jpg";
 import menuDinner from "@/assets/menu-dinner.jpg";
 import menuRoom from "@/assets/menu-room-service.jpg";
 import menuBeverages from "@/assets/menu-beverages.jpg";
+import menuCocktails from "@/assets/menu-cocktails.jpg";
 
 const Menus = () => {
   const [dinnerOpen, setDinnerOpen] = useState(false);
@@ -30,6 +31,7 @@ const Menus = () => {
 
           <TileLink to="/menus" image={menuRoom} label="Room Service" cornerText="Hotels King Room" onClick={(e) => { e.preventDefault(); setRoomOpen(true); }} />
           <TileLink to="/menus" image={menuBeverages} label="Beverages" onClick={(e) => { e.preventDefault(); setBeverageOpen(true); }} />
+          <TileLink to="/menus" image={menuCocktails} label={"Cocktails\u00a0\nAvailable from 27 July · Coming Soon"} onClick={(e) => e.preventDefault()} />
         </div>
       </section>
       <section className="container-narrow pb-32 text-center">
