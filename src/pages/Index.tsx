@@ -21,7 +21,7 @@ const Index = () => {
   return (
     <Layout
       title="Glass House — Creative New Zealand Dining · Whanganui"
-      description="Glass House is a modern fine-dining restaurant in Whanganui, New Zealand. Creative New Zealand dining, refined seasonal menus, an intimate room."
+      description="Glass House is a modern restaurant in Whanganui, New Zealand. Creative New Zealand dining, refined seasonal menus, an intimate room."
     >
       {/* HERO */}
       <section className="relative h-screen w-full overflow-hidden">
