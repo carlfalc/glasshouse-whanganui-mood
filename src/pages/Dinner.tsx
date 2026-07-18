@@ -11,7 +11,7 @@ const Dinner = () => (
   <MenuPage
     title="Dinner"
     descriptor="An evening tasting of New Zealand's finest produce, served à la carte."
-    metaDescription="Glass House Dinner menu — fine-dining evening service in Whanganui, New Zealand."
+    metaDescription="Glass House Dinner menu — evening service in Whanganui, New Zealand."
     sections={[
       { title: "Entrées", items: placeholder(5) },
       { title: "Mains", items: placeholder(5) },

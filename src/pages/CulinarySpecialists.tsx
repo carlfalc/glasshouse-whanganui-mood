@@ -6,7 +6,7 @@ import moninChampion from "@/assets/monin-champion.png.asset.json";
 const kitchenCredentials = [
   {
     title: "Michelin Guide-linked experience",
-    body: "One of our senior chefs has worked in a Michelin Guide-listed restaurant in California (USA), bringing fine-dining discipline and standards to our kitchen.",
+    body: "One of our senior chefs has worked in a Michelin Guide-listed restaurant in California (USA), bringing discipline and high standards to our kitchen.",
   },
   {
     title: "Internationally acclaimed training",
@@ -86,7 +86,7 @@ const footprint = [
   "Ganga Ratna Restaurant — Tokyo, Japan",
   "Namaste Restaurant — Sumiyoshi, Fukuoka, Japan",
   "Hotel Vaishali — Kathmandu, Nepal",
-  "Airport lounges & fine dining — Kolkata, India",
+  "Airport lounges & restaurants — Kolkata, India",
   "Young Chef Olympiad — International",
   "Star Group / Kapura Hospitality — Wellington, NZ",
   "Heritage Hanmer Springs — Canterbury, NZ",
