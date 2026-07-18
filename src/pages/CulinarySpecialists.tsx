@@ -86,7 +86,7 @@ const footprint = [
   "Ganga Ratna Restaurant — Tokyo, Japan",
   "Namaste Restaurant — Sumiyoshi, Fukuoka, Japan",
   "Hotel Vaishali — Kathmandu, Nepal",
-  "Airport lounges & fine dining — Kolkata, India",
+  "Airport lounges & restaurants — Kolkata, India",
   "Young Chef Olympiad — International",
   "Star Group / Kapura Hospitality — Wellington, NZ",
   "Heritage Hanmer Springs — Canterbury, NZ",
