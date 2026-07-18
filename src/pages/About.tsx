@@ -3,7 +3,7 @@ import aboutHero from "@/assets/about-hero.jpg";
 
 
 const About = () => (
-  <Layout title="About — Glass House Whanganui" description="The story of Glass House, a fine-dining restaurant in Whanganui, New Zealand.">
+  <Layout title="About — Glass House Whanganui" description="The story of Glass House, a restaurant in Whanganui, New Zealand.">
     <section className="relative h-[60vh] w-full overflow-hidden mt-0">
       <img src={aboutHero} alt="Chef plating at Glass House" className="absolute inset-0 w-full h-full object-cover" />
       <div className="absolute inset-0 bg-gradient-to-b from-black/40 to-black/70" />
