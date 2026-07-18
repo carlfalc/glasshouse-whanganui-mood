@@ -6,7 +6,7 @@ import moninChampion from "@/assets/monin-champion.png.asset.json";
 const kitchenCredentials = [
   {
     title: "Michelin Guide-linked experience",
-    body: "One of our senior chefs has worked in a Michelin Guide-listed restaurant in California (USA), bringing fine-dining discipline and standards to our kitchen.",
+    body: "One of our senior chefs has worked in a Michelin Guide-listed restaurant in California (USA), bringing discipline and high standards to our kitchen.",
   },
   {
     title: "Internationally acclaimed training",
