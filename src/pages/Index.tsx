@@ -28,7 +28,7 @@ const Index = () => {
         <img
           src={heroGlasshouse}
           alt=""
-          className="absolute inset-0 w-full h-full object-cover object-top"
+          className="absolute inset-0 w-full h-full object-contain object-top bg-[#1a2e1f] md:object-cover"
         />
 
         
