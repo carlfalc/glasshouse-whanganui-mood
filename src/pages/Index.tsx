@@ -102,7 +102,7 @@ const Index = () => {
               <div className="pt-6 space-y-1 text-charcoal/80">
                 <p className="text-[11px] uppercase tracking-wider text-brass mb-2">Opening Hours</p>
                 <p className="whitespace-pre-line">
-                  Opening 7 July Tuesday to Saturday 3pm to Late
+                  CLOSED MONDAYS, OPEN ALL DAY FRIDAYS & SATURDAYS, SUNDAY 10AM TO 3PM
                 </p>
               </div>
             </div>
