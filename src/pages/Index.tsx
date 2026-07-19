@@ -25,10 +25,11 @@ const Index = () => {
     >
       {/* HERO */}
       <section className="relative h-screen w-full overflow-hidden">
+        <div className="absolute inset-0 bg-[#1a2e1f] md:hidden" />
         <img
           src={heroGlasshouse}
           alt=""
-          className="absolute inset-0 w-full h-full object-contain object-top bg-[#1a2e1f] md:object-cover"
+          className="absolute inset-x-0 top-1/2 -translate-y-1/2 w-[88%] mx-auto max-h-[55vh] object-contain md:inset-0 md:translate-y-0 md:top-0 md:w-full md:h-full md:max-h-none md:object-cover md:object-top"
         />
 
         
