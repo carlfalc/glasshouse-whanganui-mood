@@ -35,7 +35,7 @@ const Index = () => {
         
         <div className="absolute top-24 md:top-28 left-0 right-0 z-20 container-narrow fade-up">
           <p className="text-cream text-[11px] md:text-sm uppercase tracked max-w-md whitespace-pre-line">
-            {"MONDAY 4PM TO 8PM, TUES-THURS 3PM TO LATE\u00A0 OPEN ALL DAY FRIDAYS & SATURDAYS, SUNDAY 10AM TO 3PM"}
+            {"MONDAY 4PM TO 8PM, TUES-THURS 3PM TO LATE - OPEN ALL DAY FRIDAYS & SATURDAYS, SUNDAY 10AM TO 3PM"}
           </p>
           <button
             onClick={() => setBookingOpen(true)}
@@ -102,7 +102,7 @@ const Index = () => {
               <div className="pt-6 space-y-1 text-charcoal/80">
                 <p className="text-[11px] uppercase tracking-wider text-brass mb-2">Opening Hours</p>
                 <p className="whitespace-pre-line">
-                  MONDAY 4PM TO 8PM, TUES-THURS 3PM TO LATE{"\u00A0"} OPEN ALL DAY FRIDAYS & SATURDAYS, SUNDAY 10AM TO 3PM
+                  MONDAY 4PM TO 8PM, TUES-THURS 3PM TO LATE - OPEN ALL DAY FRIDAYS & SATURDAYS, SUNDAY 10AM TO 3PM
                 </p>
               </div>
             </div>
