@@ -1,12 +1,12 @@
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
-import page1 from "@/assets/cellar-menu-page-1.jpg.asset.json";
-import page2 from "@/assets/cellar-menu-page-2.jpg.asset.json";
-import page3 from "@/assets/cellar-menu-page-3.jpg.asset.json";
-import page4 from "@/assets/cellar-menu-page-4.jpg.asset.json";
-import page5 from "@/assets/cellar-menu-page-5.jpg.asset.json";
-import page6 from "@/assets/cellar-menu-page-6.jpg.asset.json";
-import page7 from "@/assets/cellar-menu-page-7.jpg.asset.json";
-import page8 from "@/assets/cellar-menu-page-8.jpg.asset.json";
+import page1 from "@/assets/cellar-menu-v3-page-1.jpg.asset.json";
+import page2 from "@/assets/cellar-menu-v3-page-2.jpg.asset.json";
+import page3 from "@/assets/cellar-menu-v3-page-3.jpg.asset.json";
+import page4 from "@/assets/cellar-menu-v3-page-4.jpg.asset.json";
+import page5 from "@/assets/cellar-menu-v3-page-5.jpg.asset.json";
+import page6 from "@/assets/cellar-menu-v3-page-6.jpg.asset.json";
+import page7 from "@/assets/cellar-menu-v3-page-7.jpg.asset.json";
+import page8 from "@/assets/cellar-menu-v3-page-8.jpg.asset.json";
 
 const pages = [page1, page2, page3, page4, page5, page6, page7, page8].map((p) => p.url);
 
