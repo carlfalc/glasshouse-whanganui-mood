@@ -29,7 +29,7 @@ const Menus = () => {
           <TileLink to="/menus" image={menuBrunch} label={"Brunch & Lunch\u00a0\nNow Open Friday, Saturday & Sunday"} onClick={(e) => { e.preventDefault(); setBrunchOpen(true); }} />
           <TileLink to="/menus" image={menuDinner} label="Dinner" onClick={(e) => { e.preventDefault(); setDinnerOpen(true); }} />
 
-          <TileLink to="/menus" image={menuRoom} label={"Room Service\u00a0\nComing Soon"} cornerText="Hotels King Room" onClick={(e) => e.preventDefault()} />
+          <TileLink to="/menus" image={menuRoom} label={"Room Service\u00a0\nComing Soon"} cornerText="Hotels King Room" onClick={(e) => { e.preventDefault(); setRoomOpen(true); }} />
           <TileLink to="/menus" image={menuBeverages} label="Beverages" onClick={(e) => { e.preventDefault(); setBeverageOpen(true); }} />
 
         </div>
