@@ -40,9 +40,12 @@ const Card = ({ name, role, bio }: Member) => (
     </div>
     <h3 className="font-serif text-xl text-cream mt-4">{name}</h3>
     <p className="text-[11px] uppercase tracked text-brass mt-1">{role}</p>
-    <p className="text-sm text-cream/65 mt-3 leading-relaxed">{bio}</p>
+    {bio && bio.trim() && !/bio coming soon/i.test(bio) && (
+      <p className="text-sm text-cream/65 mt-3 leading-relaxed">{bio}</p>
+    )}
   </div>
 );
+
 
 const OurPeople = () => (
   <Layout
