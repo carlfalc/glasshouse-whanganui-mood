@@ -34,7 +34,7 @@ const RoomServiceMenuDialog = ({ open, onOpenChange }: Props) => {
       <DialogContent className="max-w-5xl max-h-[92vh] overflow-y-auto bg-background border-border p-0">
         <div className="sticky top-0 z-10 flex items-center justify-between gap-4 bg-background/95 backdrop-blur border-b border-border px-6 py-4">
           <DialogTitle className="font-serif text-xl text-cream">
-            Room Service — Coming Soon
+            Room Service
           </DialogTitle>
         </div>
 
