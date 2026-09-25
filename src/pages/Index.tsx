@@ -82,7 +82,7 @@ const Index = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
             <TileLink to="/menus" image={menuBrunch} label="Menus" />
             <TileLink to="/our-people" image={aboutHero} label="Our People" />
-            <TileLink to="/culinary-specialists" image={culinarySpecialistsTile} label="Culinary Specialists" />
+            <TileLink to="/culinary-specialists" image={culinarySpecialistsTile} label="Culinary Team" />
           </div>
         </div>
       </section>

@@ -117,12 +117,12 @@ const SectionHeading = ({ children }: { children: React.ReactNode }) => (
 
 const CulinarySpecialists = () => (
   <Layout
-    title="Culinary Specialists — Glass House Whanganui"
+    title="Culinary Team — Glass House Whanganui"
     description="Meet the internationally trained chefs, award-winning bar talent and certified leaders behind Glass House at The Avenue Hotel, Whanganui."
   >
     <section className="pt-40 pb-12 text-center container-narrow">
       <p className="text-[11px] uppercase tracked text-brass mb-6">The Avenue Hotel • Whanganui</p>
-      <h1 className="font-serif text-5xl md:text-6xl text-cream">Culinary Specialists</h1>
+      <h1 className="font-serif text-5xl md:text-6xl text-cream">Culinary Team</h1>
       <div className="w-12 h-px bg-brass mx-auto mt-8" />
     </section>
 

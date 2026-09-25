@@ -7,7 +7,7 @@ import BookingDialog from "./BookingDialog";
 const navItems = [
   { to: "/", label: "Home" },
   { to: "/menus", label: "Menus" },
-  { to: "/culinary-specialists", label: "Culinary Specialists" },
+  { to: "/culinary-specialists", label: "Culinary Team" },
   { to: "/about", label: "About" },
   { to: "/our-people", label: "Our People" },
   { to: "/contact", label: "Contact" },
