@@ -37,12 +37,20 @@ const Index = () => {
           <p className="text-cream text-[11px] md:text-sm uppercase tracked max-w-md whitespace-pre-line">
             {"MONDAY 4PM TO 8PM, TUES-THURS 3PM TO LATE - OPEN ALL DAY FRIDAYS & SATURDAYS, SUNDAY 10AM TO 3PM"}
           </p>
-          <button
-            onClick={() => setBookingOpen(true)}
-            className="mt-5 inline-block text-[11px] uppercase tracked px-7 py-4 bg-brass text-charcoal hover:bg-brass/90 transition-colors"
-          >
-            Book Now
-          </button>
+          <div className="mt-5 flex flex-wrap items-center gap-4">
+            <button
+              onClick={() => setBookingOpen(true)}
+              className="inline-block text-[11px] uppercase tracked px-7 py-4 bg-brass text-charcoal hover:bg-brass/90 transition-colors"
+            >
+              Book Now
+            </button>
+            <a
+              href="tel:062424177"
+              className="text-cream text-[11px] md:text-sm uppercase tracked hover:text-brass transition-colors"
+            >
+              06 242 4177
+            </a>
+          </div>
         </div>
 
         <div className="relative z-10 h-full container-narrow flex flex-col justify-end pb-10 md:pb-14">
