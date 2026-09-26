@@ -1,13 +1,10 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import Index from "./pages/Index.tsx";
 import Menus from "./pages/Menus.tsx";
-import BrunchLunch from "./pages/BrunchLunch.tsx";
-import Dinner from "./pages/Dinner.tsx";
-import RoomService from "./pages/RoomService.tsx";
 import About from "./pages/About.tsx";
 import OurPeople from "./pages/OurPeople.tsx";
 import CulinarySpecialists from "./pages/CulinarySpecialists.tsx";
@@ -34,9 +31,9 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/menus" element={<Menus />} />
-          <Route path="/menus/brunch-lunch" element={<BrunchLunch />} />
-          <Route path="/menus/dinner" element={<Dinner />} />
-          <Route path="/menus/room-service" element={<RoomService />} />
+          <Route path="/menus/brunch-lunch" element={<Navigate to="/menus" replace />} />
+          <Route path="/menus/dinner" element={<Navigate to="/menus" replace />} />
+          <Route path="/menus/room-service" element={<Navigate to="/menus" replace />} />
           <Route path="/about" element={<About />} />
           <Route path="/our-people" element={<OurPeople />} />
           <Route path="/culinary-specialists" element={<CulinarySpecialists />} />
