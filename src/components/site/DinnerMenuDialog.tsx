@@ -2,15 +2,15 @@ import { useState } from "react";
 import { Printer, Share2, Download } from "lucide-react";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import { toast } from "sonner";
-import menuPdf from "@/assets/Glasshouse_Dinner_Menu_v4.pdf.asset.json";
-import page1 from "@/assets/dinner-menu-v4-page-1.png.asset.json";
-import page2 from "@/assets/dinner-menu-v4-page-2.png.asset.json";
-import page3 from "@/assets/dinner-menu-v4-page-3.png.asset.json";
-import page4 from "@/assets/dinner-menu-v4-page-4.png.asset.json";
-import page5 from "@/assets/dinner-menu-v4-page-5.png.asset.json";
-import page6 from "@/assets/dinner-menu-v4-page-6.png.asset.json";
-import page7 from "@/assets/dinner-menu-v4-page-7.png.asset.json";
-import page8 from "@/assets/dinner-menu-v4-page-8.png.asset.json";
+import menuPdf from "@/assets/Glasshouse_Dinner_Menu_v9.pdf.asset.json";
+import page1 from "@/assets/dinner-menu-v9-page-1.png.asset.json";
+import page2 from "@/assets/dinner-menu-v9-page-2.png.asset.json";
+import page3 from "@/assets/dinner-menu-v9-page-3.png.asset.json";
+import page4 from "@/assets/dinner-menu-v9-page-4.png.asset.json";
+import page5 from "@/assets/dinner-menu-v9-page-5.png.asset.json";
+import page6 from "@/assets/dinner-menu-v9-page-6.png.asset.json";
+import page7 from "@/assets/dinner-menu-v9-page-7.png.asset.json";
+import page8 from "@/assets/dinner-menu-v9-page-8.png.asset.json";
 
 const pages = [page1, page2, page3, page4, page5, page6, page7, page8].map((p) => p.url);
 
